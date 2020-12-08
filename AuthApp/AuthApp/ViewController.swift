@@ -9,9 +9,12 @@ import UIKit
 
 
 class ViewController: UIViewController {
-
+    
     var deviceName:String?
     var offsetAfterKb: CGFloat?
+    
+    let loginText: String = "root"
+    let pswdTexr: String = "root"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +32,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var uiViewAuth: UIView!
     @IBOutlet weak var loginLbl: UILabel!
     @IBOutlet weak var pswdLbl: UILabel!
-    @IBAction func loginTxtField(_ sender: Any) {
+    @IBOutlet weak var loginTxtFieldArea: UITextField!
+    @IBOutlet weak var pswdTxtFieldArea: UITextField!
+    
+    
+    @IBAction func loginTxtField(_ sender: UITextField) {
     }
-    @IBAction func pswdTxtField(_ sender: Any) {
+    @IBAction func pswdTxtField(_ sender: UITextField) {
     }
     @IBAction func cancelBtn(_ sender: Any) {
     }
     @IBAction func enterBtn(_ sender: Any) {
     }
     
-
+    
     @objc func keyboardWillShow(_ notification: Notification) {
         
         switch deviceName {
@@ -46,20 +53,38 @@ class ViewController: UIViewController {
         case "iPhone 11 Pro Max": offsetAfterKb = 0
         default : offsetAfterKb = 70
         }
-
+        
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height + offsetAfterKb!
             }
         }
     }
-
+    
     @objc func keyboardWillHide(_ notification: Notification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
     }
-
+    
+    func isApproved ()-> Bool {
+        return loginTxtFieldArea.text == loginText && pswdTxtFieldArea.text == pswdTexr
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if !isApproved () {
+            let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
+            // Создаем кнопку для UIAlertController
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            // Добавляем кнопку на UIAlertController
+            alert.addAction(action)
+            // Показываем UIAlertController
+            present(alert, animated: true, completion: nil)
+            loginTxtFieldArea.text = ""
+            pswdTxtFieldArea.text = ""
+        }
+        return true
+    }
     
     deinit {
         removeKBNotification()
@@ -79,7 +104,7 @@ class ViewController: UIViewController {
             sysctlbyname("hw.machine", &machine, &size, nil, 0)
             return String(cString: machine)
         }()
-
+        
         //iPhone
         if platform == "iPhone1,1"        { return "iPhone (1st generation)" }
         else if platform == "iPhone1,2"   { return "iPhone 3G" }
@@ -115,7 +140,7 @@ class ViewController: UIViewController {
         else if platform == "iPhone12,1"  { return "iPhone 11" }
         else if platform == "iPhone12,3"  { return "iPhone 11 Pro" }
         else if platform == "iPhone12,5"  { return "iPhone 11 Pro Max" }
-
+        
         //iPod Touch
         else if platform == "iPod1,1"     { return "iPod Touch (1st generation)" }
         else if platform == "iPod2,1"     { return "iPod Touch (2nd generation)" }
@@ -124,7 +149,7 @@ class ViewController: UIViewController {
         else if platform == "iPod5,1"     { return "iPod Touch (5th generation)" }
         else if platform == "iPod7,1"     { return "iPod Touch (6th generation)" }
         else if platform == "iPod9,1"     { return "iPod Touch (7th generation)" }
-
+        
         //iPad
         else if platform == "iPad1,1"     { return "iPad (1st generation)" }
         else if platform == "iPad2,1"     { return "iPad 2 (Wi-Fi)" }
@@ -143,7 +168,7 @@ class ViewController: UIViewController {
         else if platform == "iPad7,6"     { return "iPad (6th generation) (Cellular)" }
         else if platform == "iPad7,11"     { return "iPad (7th generation) (Wi-Fi)" }
         else if platform == "iPad7,12"     { return "iPad (7th generation) (Cellular)" }
-
+        
         //iPad Mini
         else if platform == "iPad2,5"     { return "iPad mini (Wi-Fi)" }
         else if platform == "iPad2,6"     { return "iPad mini (GSM)" }
@@ -158,7 +183,7 @@ class ViewController: UIViewController {
         else if platform == "iPad5,2"     { return "iPad mini 4 (Cellular)" }
         else if platform == "iPad11,1"    { return "iPad mini (5th generation) (Wi-Fi)" }
         else if platform == "iPad11,2"    { return "iPad mini (5th generation)  (Cellular)" }
-
+        
         //iPad Air
         else if platform == "iPad4,1"     { return "iPad Air (Wi-Fi)" }
         else if platform == "iPad4,2"     { return "iPad Air (Cellular)" }
@@ -167,7 +192,7 @@ class ViewController: UIViewController {
         else if platform == "iPad5,4"     { return "iPad Air 2 (Cellular)" }
         else if platform == "iPad11,3"    { return "iPad Air (3rd generation) (Wi-Fi)" }
         else if platform == "iPad11,4"    { return "iPad Air (3rd generation) (Cellular)" }
-
+        
         //iPad Pro
         else if platform == "iPad6,3"     { return "iPad Pro 9.7\" (Wi-Fi)" }
         else if platform == "iPad6,4"     { return "iPad Pro 9.7\" (Cellular)" }
@@ -185,11 +210,11 @@ class ViewController: UIViewController {
         else if platform == "iPad8,6"     { return "iPad Pro 12.9\" (3rd generation) (Cellular)" }
         else if platform == "iPad8,7"     { return "iPad Pro 12.9\" (3rd generation) (Wi-Fi, 1TB)" }
         else if platform == "iPad8,8"     { return "iPad Pro 12.9\" (3rd generation) (Cellular, 1TB)" }
-
+        
         //Simulator
         else if platform == "i386"        { return "Simulator" }
         else if platform == "x86_64"      { return "Simulator"}
-
+        
         return platform
     }
     
