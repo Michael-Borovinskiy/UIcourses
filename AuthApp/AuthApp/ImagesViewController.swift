@@ -12,6 +12,8 @@ class ImagesViewController: UIViewController {
     
     @IBOutlet weak var uiCollectionView: UICollectionView!
     
+    var imgFriends: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.uiCollectionView.dataSource = self
@@ -28,7 +30,7 @@ extension ImagesViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = uiCollectionView.dequeueReusableCell(withReuseIdentifier: "imgCell", for: indexPath) as! ImageCell
-        cell.setImg(str: "face1")
+        cell.setImg(str: imgFriends!)
         return cell
     }
     

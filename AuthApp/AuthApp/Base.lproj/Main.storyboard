@@ -214,7 +214,7 @@
                                         <connections>
                                             <outlet property="imgFriend" destination="Hfk-x9-aBk" id="XXF-IH-tya"/>
                                             <outlet property="nameFriend" destination="jHp-1G-dch" id="5VJ-1h-eX7"/>
-                                            <segue destination="bUs-KL-eQ1" kind="show" id="x9w-Xz-pJ2"/>
+                                            <segue destination="bUs-KL-eQ1" kind="show" identifier="toCollection" id="x9w-Xz-pJ2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

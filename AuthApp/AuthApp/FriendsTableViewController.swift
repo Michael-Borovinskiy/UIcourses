@@ -14,7 +14,6 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
 
     var userData: UserData = UserData()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         uiTableView.delegate = self
@@ -36,12 +35,12 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
              return cell
     }
     
-  /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toCollection" else { return }
-        guard let destination = segue.destination as? FriendImgCollection else { return }
-        destination.imgFriends = data[0].1
+        guard let destination = segue.destination as? ImagesViewController else { return }
+        destination.imgFriends = userData.user[uiTableView.indexPathForSelectedRow!.row].image
     }
-    */
+    
     
     
 }
