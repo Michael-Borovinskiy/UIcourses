@@ -22,7 +22,7 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (userData.user.count)//data.count
+        return (userData.user.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

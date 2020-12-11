@@ -7,28 +7,31 @@
 
 import UIKit
 
-class GroupsTableViewController: UITableViewController {
+class GroupsTableViewController: UIViewController, UITableViewDataSource ,UITableViewDelegate {
     
     @IBOutlet weak var uiTableView: UITableView!
-    var data: [String] = ["Swift", "ObjectiveC", "Java", "JS"]
+    var groupData: GroupData = GroupData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-    
-    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId2", for: indexPath)
-        cell.textLabel?.text = data[indexPath.row]
-        
-        return cell
+        uiTableView.delegate = self
+        uiTableView.dataSource = self
     }
     
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-        
-        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (groupData.group.count)
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "myGroupCell", for: indexPath) as! MyGroupCell
+            let image = UIImage(named: groupData.group[indexPath.row].image)!
+            let name = groupData.group[indexPath.row].name
+        
+        cell.setValues(img: image,name: name)
+        
+             return cell
+    }
+    
+
 }

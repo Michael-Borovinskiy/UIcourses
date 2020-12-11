@@ -19,7 +19,7 @@ class FriendsCell: UITableViewCell {
     func setValues(img: UIImage, name: String) {
         imgFriend.image = img
         nameFriend.text = name
-        //FriendsCell.userData = UserData.init(image: img, userName: name)
+
     }
     
 
