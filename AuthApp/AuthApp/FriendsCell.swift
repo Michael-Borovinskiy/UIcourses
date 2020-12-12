@@ -9,9 +9,6 @@ import UIKit
 
 class FriendsCell: UITableViewCell {
 
-    //static var userData: UserData?
-    
-    
     @IBOutlet weak var imgFriend: UIImageView!
     @IBOutlet weak var nameFriend: UILabel!
     

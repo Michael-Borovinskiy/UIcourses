@@ -8,14 +8,21 @@
 import UIKit
 
 
-struct Group {
-    var image: String
-    var name: String
+class Group {
     
-}
+    var image: String = ""
+    var name: String = ""
+    
+    init(image img: String, name nm: String) {
+        self.image = img
+        self.name = nm
+    }
+    
+   }
 
 class GroupData  {
-     
+    
+
     var group = [Group]()
     var group2 = [Group]()
     

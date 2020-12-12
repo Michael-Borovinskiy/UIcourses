@@ -324,7 +324,7 @@
         <!--My Groups-->
         <scene sceneID="F0G-8T-diE">
             <objects>
-                <viewController id="tGN-6j-Cbe" customClass="GroupsTableViewController" customModule="AuthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupsTableViewController" id="tGN-6j-Cbe" customClass="GroupsTableViewController" customModule="AuthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nWE-g7-ZSc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -384,7 +384,7 @@
                     <navigationItem key="navigationItem" title="My Groups" id="2ak-fg-9MG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ira-8T-fvV">
                             <connections>
-                                <segue destination="nfu-rq-omo" kind="show" id="eeU-i8-t39"/>
+                                <segue destination="nfu-rq-omo" kind="show" identifier="" id="eeU-i8-t39"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -396,7 +396,7 @@
             </objects>
             <point key="canvasLocation" x="2313.04347826087" y="474.77678571428567"/>
         </scene>
-        <!--All Groups Table View Controller-->
+        <!--All Groups-->
         <scene sceneID="rdB-ac-bx8">
             <objects>
                 <viewController id="nfu-rq-omo" customClass="AllGroupsTableViewController" customModule="AuthApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -456,7 +456,7 @@
                             <constraint firstItem="QeW-Dj-1WP" firstAttribute="leading" secondItem="cdV-g8-HzI" secondAttribute="leading" id="p9m-fD-5TS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7bj-z6-XCQ"/>
+                    <navigationItem key="navigationItem" title="All Groups" id="7bj-z6-XCQ"/>
                     <connections>
                         <outlet property="uiTableView" destination="QeW-Dj-1WP" id="wOC-mz-QGa"/>
                     </connections>

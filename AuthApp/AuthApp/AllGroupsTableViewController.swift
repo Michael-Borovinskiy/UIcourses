@@ -31,9 +31,17 @@ class AllGroupsTableViewController: UIViewController, UITableViewDataSource ,UIT
             let name = groupData.group2[indexPath.row].name
         
         cell.setValues(img: image,name: name)
-        
              return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        _ = self.navigationController?.popViewController(animated: true)
+                  let previousViewController = self.navigationController?.viewControllers.last as! GroupsTableViewController
+                   previousViewController.groupFromAllGroups = groupData.group2[uiTableView.indexPathForSelectedRow!.row]
+        
+    }
+    
+    
+
 
 }
