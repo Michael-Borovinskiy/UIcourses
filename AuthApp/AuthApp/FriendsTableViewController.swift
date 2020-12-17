@@ -38,7 +38,7 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toCollection" else { return }
         guard let destination = segue.destination as? ImagesViewController else { return }
-        destination.imgFriends = userData.user[uiTableView.indexPathForSelectedRow!.row].image
+        destination.imgFriends = userData.user[uiTableView.indexPathForSelectedRow!.row].photos
     }
     
     

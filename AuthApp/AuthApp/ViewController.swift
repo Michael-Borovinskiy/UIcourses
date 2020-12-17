@@ -72,17 +72,17 @@ class ViewController: UIViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if !isApproved () {
-            let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
-            // Создаем кнопку для UIAlertController
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            // Добавляем кнопку на UIAlertController
-            alert.addAction(action)
-            // Показываем UIAlertController
-            present(alert, animated: true, completion: nil)
-            loginTxtFieldArea.text = ""
-            pswdTxtFieldArea.text = ""
-        }
+//        if !isApproved () {
+//            let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
+//            // Создаем кнопку для UIAlertController
+//            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//            // Добавляем кнопку на UIAlertController
+//            alert.addAction(action)
+//            // Показываем UIAlertController
+//            present(alert, animated: true, completion: nil)
+//            loginTxtFieldArea.text = ""
+//            pswdTxtFieldArea.text = ""
+//        }
         return true
     }
     

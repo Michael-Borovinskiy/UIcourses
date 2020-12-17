@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ImageCell" customModule="AuthApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="162" height="189"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BCs-Gf-Xup">
+                    <rect key="frame" x="5" y="5" width="152" height="144"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="152" id="LJ8-SA-Cax"/>
+                        <constraint firstAttribute="height" constant="144" id="PTr-jP-mnZ"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="144" id="g5k-tp-HGz"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSn-cU-DNs">
+                    <rect key="frame" x="66" y="152" width="74.5" height="32"/>
+                    <color key="tintColor" systemColor="systemGreenColor"/>
+                    <state key="normal" title="Button" image="heart" catalog="system"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWj-ju-Kbc">
+                    <rect key="frame" x="104" y="158" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="KSn-cU-DNs" firstAttribute="top" secondItem="BCs-Gf-Xup" secondAttribute="bottom" constant="3" id="9CC-FX-gEh"/>
+                <constraint firstItem="hWj-ju-Kbc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="104" id="FoP-8E-wzN"/>
+                <constraint firstItem="BCs-Gf-Xup" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="LtS-4R-8Eb"/>
+                <constraint firstItem="KSn-cU-DNs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="66" id="Oha-QT-fJa"/>
+                <constraint firstItem="BCs-Gf-Xup" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cRg-0D-4ma"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="hWj-ju-Kbc" secondAttribute="bottom" constant="10" id="eFz-tM-Lwn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="KSn-cU-DNs" secondAttribute="bottom" constant="5" id="jF3-wd-vHk"/>
+                <constraint firstItem="hWj-ju-Kbc" firstAttribute="top" secondItem="BCs-Gf-Xup" secondAttribute="bottom" constant="9" id="lsO-Jr-L7f"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hWj-ju-Kbc" secondAttribute="trailing" constant="16" id="qj9-Gq-xZY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btnLikes" destination="KSn-cU-DNs" id="d4N-EG-KcQ"/>
+                <outlet property="img" destination="BCs-Gf-Xup" id="h8t-6C-9sn"/>
+                <outlet property="lblLikes" destination="hWj-ju-Kbc" id="RfN-e9-Nrh"/>
+            </connections>
+            <point key="canvasLocation" x="-339" y="-193"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
