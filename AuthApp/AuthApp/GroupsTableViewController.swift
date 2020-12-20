@@ -19,6 +19,8 @@ class GroupsTableViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         uiTableView.delegate = self
         uiTableView.dataSource = self
+        
+        uiTableView.register(UINib(nibName: "CustomCellForFriendsAndGroups", bundle: nil), forCellReuseIdentifier: "customCellForTable")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +43,7 @@ class GroupsTableViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "myGroupCell", for: indexPath) as! MyGroupCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "customCellForTable", for: indexPath) as! CustomCellForFriendsAndGroups //MyGroupCell
             let image = UIImage(named: groupData.group[indexPath.row].image)!
             let name = groupData.group[indexPath.row].name
         
@@ -54,6 +56,7 @@ class GroupsTableViewController: UIViewController, UITableViewDataSource, UITabl
         if editingStyle == .delete {
             groupData.group.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            groupFromAllGroups = nil
         }
     }
     

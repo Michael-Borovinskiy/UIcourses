@@ -18,6 +18,8 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         super.viewDidLoad()
         uiTableView.delegate = self
         uiTableView.dataSource = self
+        
+        uiTableView.register(UINib(nibName: "CustomCellForFriendsAndGroups", bundle: nil), forCellReuseIdentifier: "customCellForTable")
     }
     
     
@@ -26,7 +28,7 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath) as! FriendsCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "customCellForTable", for: indexPath) as! CustomCellForFriendsAndGroups
             let image = UIImage(named: userData.user[indexPath.row].image)!
             let name = userData.user[indexPath.row].name
         
