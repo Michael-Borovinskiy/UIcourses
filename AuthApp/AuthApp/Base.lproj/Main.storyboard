@@ -111,6 +111,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="centerVerticalFormContraint" destination="RjI-ag-ydR" id="B1a-98-o3h"/>
                         <outlet property="loginLbl" destination="JAL-sb-TCq" id="Ykn-VL-VuH"/>
                         <outlet property="loginTxtFieldArea" destination="vS4-hN-74g" id="lrz-xV-3Wn"/>
                         <outlet property="pswdLbl" destination="IyS-YC-Hhd" id="sf0-g3-P0U"/>
