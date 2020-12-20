@@ -37,6 +37,11 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
              return cell
     }
     
+//    private func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//       return 200
+//   }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -46,6 +51,7 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
     }
     
 
+    
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        guard segue.identifier == "toCollection" else { return }
