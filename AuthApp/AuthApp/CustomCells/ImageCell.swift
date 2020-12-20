@@ -19,13 +19,18 @@ class ImageCell: UICollectionViewCell {
     func setImg (image: UIImage) {
         self.img.image = image
         self.lblLikes.text = "0"
+
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         btnLikes.addTarget(self, action: #selector(setLike), for: .touchUpInside)
-        self.tintColor = UIColor.gray
-        
+        self.clipsToBounds = true
+        self.contentMode = .scaleAspectFit
+        self.img.clipsToBounds = true
+        self.img.contentMode = .scaleAspectFit
+        self.layer .borderWidth = 0.5
+        self.layer.borderColor = UIColor.darkGray.cgColor
     }
     
         @objc func setLike() {

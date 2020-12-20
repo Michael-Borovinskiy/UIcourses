@@ -9,11 +9,11 @@ import UIKit
 
 class ImagesViewController: UIViewController {
     
-    private let itemsPerRow: CGFloat = 3
+    private let itemsPerRow: CGFloat = 2
     private let sectionInsets = UIEdgeInsets(top: 50.0,
-                                             left: 20.0,
+                                             left: 30.0,
                                              bottom: 50.0,
-                                             right: 20.0)
+                                             right: 30.0)
     
     @IBOutlet weak var uiCollectionView: UICollectionView!
     

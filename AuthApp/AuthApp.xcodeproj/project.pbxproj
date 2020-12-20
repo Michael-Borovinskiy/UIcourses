@@ -59,13 +59,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		87A015DB25891BBA00281D5C /* Buttons */ = {
+		87A015DB25891BBA00281D5C /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
 				87AA6B37258BD5C300F7C515 /* ImageCell.xib */,
 				87AE8B312583EA4A007DF0CD /* ImageCell.swift */,
 			);
-			path = Buttons;
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 		87A22C1425796A03007AC557 = {
@@ -87,7 +87,7 @@
 		87A22C1F25796A03007AC557 /* AuthApp */ = {
 			isa = PBXGroup;
 			children = (
-				87A015DB25891BBA00281D5C /* Buttons */,
+				87A015DB25891BBA00281D5C /* CustomCells */,
 				87AE8B272583D673007DF0CD /* Model */,
 				87A22C2025796A03007AC557 /* AppDelegate.swift */,
 				87A22C2225796A03007AC557 /* SceneDelegate.swift */,
