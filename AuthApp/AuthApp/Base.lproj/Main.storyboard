@@ -248,7 +248,7 @@
         <!--Images View Controller-->
         <scene sceneID="Vzg-4G-kHL">
             <objects>
-                <viewController id="bUs-KL-eQ1" customClass="ImagesViewController" customModule="AuthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImagesViewController" id="bUs-KL-eQ1" customClass="ImagesViewController" customModule="AuthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SvB-tu-TRH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

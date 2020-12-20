@@ -15,7 +15,8 @@ class FriendsCell: UITableViewCell {
         addGestureRecognizer(ilongPressGestureRecognizer)
     }
     
-    @IBOutlet weak var uiView: UIView! {didSet {self.uiView.clipsToBounds = false
+    @IBOutlet weak var uiView: UIView!
+    {didSet {self.uiView.clipsToBounds = false
         self.uiView.layer.shadowColor = UIColor.black.cgColor
         self.uiView.layer.cornerRadius = self.uiView.frame.width/2.0
         self.uiView.layer.shadowOpacity = 1

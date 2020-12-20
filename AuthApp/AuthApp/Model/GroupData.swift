@@ -36,6 +36,9 @@ class GroupData  {
         group.append(Group(image: "group3", name: "Ruby"))
         group2.append(Group(image: "group4", name: "HumourSketches"))
         group2.append(Group(image: "group5", name: "Burgers"))
+        group2.append(Group(image: "group1", name: "Java"))
+        group2.append(Group(image: "group2", name: "Js"))
+        group2.append(Group(image: "group3", name: "Ruby"))
     }
     
     

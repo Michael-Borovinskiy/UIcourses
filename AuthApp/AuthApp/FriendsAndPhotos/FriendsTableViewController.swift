@@ -37,12 +37,22 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
              return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "toCollection" else { return }
-        guard let destination = segue.destination as? ImagesViewController else { return }
-        destination.imgFriends = userData.user[uiTableView.indexPathForSelectedRow!.row].photos
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destination = storyboard.instantiateViewController(identifier: "ImagesViewController") as! ImagesViewController
+        destination.imgFriends = userData.user[indexPath.row].photos
+        show(destination, sender: self)
     }
     
+
+
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard segue.identifier == "toCollection" else { return }
+//        guard let destination = segue.destination as? ImagesViewController else { return }
+//        destination.imgFriends = userData.user[uiTableView.indexPathForSelectedRow!.row].photos
+//    }
+//
     
     
 }
