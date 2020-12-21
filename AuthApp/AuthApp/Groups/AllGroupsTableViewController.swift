@@ -37,12 +37,8 @@ class AllGroupsTableViewController: UIViewController, UITableViewDataSource ,UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         _ = self.navigationController?.popViewController(animated: true)
-                  let previousViewController = self.navigationController?.viewControllers.last as! GroupsTableViewController
-                   previousViewController.groupFromAllGroups = groupData.group2[uiTableView.indexPathForSelectedRow!.row]
-        
+        let previousViewController = self.navigationController?.viewControllers.last as! GroupsTableViewController
+        previousViewController.groupFromAllGroups = groupData.group2[uiTableView.indexPathForSelectedRow!.row]
     }
     
-    
-
-
 }

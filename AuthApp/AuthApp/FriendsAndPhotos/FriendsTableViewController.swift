@@ -11,7 +11,7 @@ import UIKit
 class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITableViewDelegate {
     
     @IBOutlet weak var uiTableView: UITableView!
-
+    
     var userData: UserData = UserData()
     
     override func viewDidLoad() {
@@ -23,37 +23,30 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
     }
     
     
-    
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (userData.user.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "customCellForTable", for: indexPath) as! CustomCellForFriendsAndGroups
-            let image = UIImage(named: userData.user[indexPath.row].image)!
-            let name = userData.user[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCellForTable", for: indexPath) as! CustomCellForFriendsAndGroups
+        let image = UIImage(named: userData.user[indexPath.row].image)!
+        let name = userData.user[indexPath.row].surname + " " + userData.user[indexPath.row].name
         
         cell.setValues(img: image,name: name)
         
-             return cell
+        return cell
     }
-    
-//    private func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//       return 200
-//   }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destination = storyboard.instantiateViewController(identifier: "ImagesViewController") as! ImagesViewController
-        destination.imgFriends = userData.user[indexPath.row].photos
+        destination.user = userData.user[indexPath.row]
         show(destination, sender: self)
     }
     
-
+    
     
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

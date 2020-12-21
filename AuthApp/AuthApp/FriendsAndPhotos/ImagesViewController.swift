@@ -12,7 +12,7 @@ class ImagesViewController: UIViewController {
     
     @IBOutlet weak var uiCollectionView: UICollectionView!
     
-    var imgFriends: [UIImage]?
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +27,13 @@ class ImagesViewController: UIViewController {
 extension ImagesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imgFriends!.count
+        return (user?.photos.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = uiCollectionView.dequeueReusableCell(withReuseIdentifier: "imgcell_fromXib", for: indexPath) as! ImageCell
-        cell.setImg(image: imgFriends![indexPath.row])
-
+        cell.setImg(image: (user?.photos[indexPath.row])!)
+        cell.setLikes(countOfLikes: (user?.photoLikes[indexPath.row])!)
         return cell
     }
     

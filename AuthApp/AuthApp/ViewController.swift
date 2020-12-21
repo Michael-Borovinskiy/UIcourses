@@ -86,7 +86,7 @@ class ViewController: UIViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-//        if !isApproved () {
+//        if !isApproved () {           //закомментировано для быстрого доступа при проверке ДЗ
 //            let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
 //            // Создаем кнопку для UIAlertController
 //            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -117,7 +117,7 @@ extension UIView{ // добавление функции вращения лог
     func rotate() {
         let rotation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
         rotation.toValue = NSNumber(value: Double.pi * 2)
-        rotation.duration = 1
+        rotation.duration = 0.5
         rotation.isCumulative = true
         rotation.repeatCount = 1.0
         self.layer.add(rotation, forKey: "rotationAnimation")
