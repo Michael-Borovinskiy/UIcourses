@@ -9,11 +9,6 @@ import UIKit
 
 class ImagesViewController: UIViewController {
     
-    private let itemsPerRow: CGFloat = 2
-    private let sectionInsets = UIEdgeInsets(top: 50.0,
-                                             left: 30.0,
-                                             bottom: 50.0,
-                                             right: 30.0)
     
     @IBOutlet weak var uiCollectionView: UICollectionView!
     
@@ -47,28 +42,13 @@ extension ImagesViewController: UICollectionViewDataSource, UICollectionViewDele
 
 extension ImagesViewController : UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
-        
-        return CGSize(width: widthPerItem, height: widthPerItem)
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsets.left
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.sectionInset = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
+        layout.minimumInteritemSpacing = 03
+        layout.minimumLineSpacing = 03
+        layout.invalidateLayout()
+
+        return CGSize(width: ((self.view.frame.width/4) - 4), height:((self.view.frame.width / 4) - 4));
     }
 }

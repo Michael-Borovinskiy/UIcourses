@@ -23,8 +23,10 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapAction))
         self.view.addGestureRecognizer(tap)
+        self.imgVk.rotate()
     }
     
+
     
     @IBOutlet weak var uiViewAuth: UIView!
     @IBOutlet weak var loginLbl: UILabel!
@@ -32,7 +34,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginTxtFieldArea: UITextField!
     @IBOutlet weak var pswdTxtFieldArea: UITextField!
     @IBOutlet weak var centerVerticalFormContraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var imgVk: UIImageView!
     
     
     @IBAction func loginTxtField(_ sender: UITextField) {
@@ -108,5 +110,17 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: self.view.window)
     }
     
+}
+
+
+extension UIView{ // добавление функции вращения логотипа
+    func rotate() {
+        let rotation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotation.toValue = NSNumber(value: Double.pi * 2)
+        rotation.duration = 1
+        rotation.isCumulative = true
+        rotation.repeatCount = 1.0
+        self.layer.add(rotation, forKey: "rotationAnimation")
+    }
 }
 

@@ -23,6 +23,9 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
     }
     
     
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (userData.user.count)
     }
