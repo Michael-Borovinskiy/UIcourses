@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		879B9878259292B6009EFDB7 /* CustomHeaderForFriendScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879B9877259292B6009EFDB7 /* CustomHeaderForFriendScreen.swift */; };
+		879B988225929915009EFDB7 /* CustomHeaderForFriendScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 879B988125929915009EFDB7 /* CustomHeaderForFriendScreen.xib */; };
 		879F80AA257FDFA0002218CA /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F80A9257FDFA0002218CA /* GroupsTableViewController.swift */; };
 		879F80AD257FE2E7002218CA /* AllGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F80AC257FE2E7002218CA /* AllGroupsTableViewController.swift */; };
 		87A034C6257C300600ECB9DF /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A034C5257C300600ECB9DF /* FriendsTableViewController.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		879B9877259292B6009EFDB7 /* CustomHeaderForFriendScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderForFriendScreen.swift; sourceTree = "<group>"; };
+		879B988125929915009EFDB7 /* CustomHeaderForFriendScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderForFriendScreen.xib; sourceTree = "<group>"; };
 		879F80A9257FDFA0002218CA /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		879F80AC257FE2E7002218CA /* AllGroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsTableViewController.swift; sourceTree = "<group>"; };
 		87A034C5257C300600ECB9DF /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 				87AE8B312583EA4A007DF0CD /* ImageCell.swift */,
 				87A454DF258FA7980014CD95 /* CustomCellForFriendsAndGroups.swift */,
 				87A454E0258FA7980014CD95 /* CustomCellForFriendsAndGroups.xib */,
+				879B9877259292B6009EFDB7 /* CustomHeaderForFriendScreen.swift */,
+				879B988125929915009EFDB7 /* CustomHeaderForFriendScreen.xib */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -187,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87A22C2D25796A05007AC557 /* LaunchScreen.storyboard in Resources */,
+				879B988225929915009EFDB7 /* CustomHeaderForFriendScreen.xib in Resources */,
 				87A22C2A25796A05007AC557 /* Assets.xcassets in Resources */,
 				87A22C2825796A03007AC557 /* Main.storyboard in Resources */,
 				87AA6B38258BD5C300F7C515 /* ImageCell.xib in Resources */,
@@ -205,6 +212,7 @@
 				87AE8B3525841145007DF0CD /* GroupData.swift in Sources */,
 				87AE8B2F2583E9EC007DF0CD /* ImagesViewController.swift in Sources */,
 				879F80AD257FE2E7002218CA /* AllGroupsTableViewController.swift in Sources */,
+				879B9878259292B6009EFDB7 /* CustomHeaderForFriendScreen.swift in Sources */,
 				87A22C2525796A03007AC557 /* ViewController.swift in Sources */,
 				87A22C2125796A03007AC557 /* AppDelegate.swift in Sources */,
 				87A034C6257C300600ECB9DF /* FriendsTableViewController.swift in Sources */,
