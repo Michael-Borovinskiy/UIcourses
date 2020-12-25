@@ -149,6 +149,7 @@
                     <connections>
                         <segue destination="Zk0-1y-7Ig" kind="relationship" relationship="viewControllers" id="mvY-Nk-5qO"/>
                         <segue destination="eEz-qH-cBl" kind="relationship" relationship="viewControllers" id="vL9-sE-lw8"/>
+                        <segue destination="AKS-aA-cbQ" kind="relationship" relationship="viewControllers" id="nqc-BH-z3d"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTY-MB-vCp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -319,6 +320,54 @@
             </objects>
             <point key="canvasLocation" x="2313.04347826087" y="474.77678571428567"/>
         </scene>
+        <!--News-->
+        <scene sceneID="z1w-Ws-UgD">
+            <objects>
+                <navigationController id="AKS-aA-cbQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="News" image="eye" catalog="system" id="Lg3-54-uk4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Hz-uz-jPB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xNN-ED-sTe" kind="relationship" relationship="rootViewController" id="RyA-gX-eek"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d4I-Uz-X5n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1558" y="1143"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="4AC-mg-Q0K">
+            <objects>
+                <viewController id="xNN-ED-sTe" customClass="NewsViewController" customModule="AuthApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wfT-j7-e3A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hKX-0x-Gza">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="W5a-PQ-X82"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hKX-0x-Gza" firstAttribute="top" secondItem="W5a-PQ-X82" secondAttribute="top" id="1Bq-zd-RBx"/>
+                            <constraint firstItem="W5a-PQ-X82" firstAttribute="bottom" secondItem="hKX-0x-Gza" secondAttribute="bottom" id="8EK-df-J7N"/>
+                            <constraint firstItem="W5a-PQ-X82" firstAttribute="trailing" secondItem="hKX-0x-Gza" secondAttribute="trailing" id="PvK-pY-QbK"/>
+                            <constraint firstItem="hKX-0x-Gza" firstAttribute="leading" secondItem="W5a-PQ-X82" secondAttribute="leading" id="hal-Fp-3yb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="News" id="lIG-J7-8ue"/>
+                    <connections>
+                        <outlet property="uiTableView" destination="hKX-0x-Gza" id="eqE-d9-u1q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Th-gG-VCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2313" y="1142"/>
+        </scene>
         <!--All Groups-->
         <scene sceneID="rdB-ac-bx8">
             <objects>
@@ -353,6 +402,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eye" catalog="system" width="128" height="81"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="vkLogo" width="512" height="512"/>
