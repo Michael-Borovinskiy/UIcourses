@@ -12,10 +12,11 @@ class CustomHeaderForFriendScreen: UITableViewHeaderFooterView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         self.backgroundView = UIView(frame: self.bounds)
-        self.backgroundView!.backgroundColor = .darkGray
-        self.backgroundView!.alpha = 0.5
-
+        self.backgroundView!.isOpaque = false
+        self.backgroundView!.alpha = 0.05
+        self.backgroundView!.backgroundColor = .green
     }
 
 
