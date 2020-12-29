@@ -10,42 +10,45 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleAspectFit" id="iN0-l3-epB" customClass="ImageCell" customModule="AuthApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="162" height="189"/>
+        <view clipsSubviews="YES" contentMode="scaleAspectFit" id="iN0-l3-epB" customClass="ImageCell" customModule="AuthApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="436" height="461"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BCs-Gf-Xup">
-                    <rect key="frame" x="5" y="5" width="152" height="144"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BCs-Gf-Xup">
+                    <rect key="frame" x="0.0" y="0.0" width="436" height="430"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="152" id="LJ8-SA-Cax"/>
-                        <constraint firstAttribute="height" constant="144" id="PTr-jP-mnZ"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="144" id="g5k-tp-HGz"/>
+                        <constraint firstAttribute="width" secondItem="BCs-Gf-Xup" secondAttribute="height" multiplier="218:215" id="XNC-HI-Rxs"/>
+                        <constraint firstAttribute="width" constant="436" id="cuW-eX-vbN"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSn-cU-DNs">
-                    <rect key="frame" x="66" y="152" width="20.5" height="32"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWj-ju-Kbc">
+                    <rect key="frame" x="385" y="436" width="40" height="20"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="D0A-pu-Ma3"/>
+                        <constraint firstAttribute="height" constant="20" id="Eb8-mP-CgQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <color key="textColor" systemColor="systemPurpleColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSn-cU-DNs">
+                    <rect key="frame" x="359" y="435" width="20.5" height="22"/>
                     <color key="tintColor" systemColor="systemGreenColor"/>
                     <state key="normal" image="heart" catalog="system"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWj-ju-Kbc">
-                    <rect key="frame" x="104" y="158" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="KSn-cU-DNs" firstAttribute="top" secondItem="BCs-Gf-Xup" secondAttribute="bottom" constant="3" id="9CC-FX-gEh"/>
-                <constraint firstItem="hWj-ju-Kbc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="104" id="FoP-8E-wzN"/>
-                <constraint firstItem="BCs-Gf-Xup" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="LtS-4R-8Eb"/>
-                <constraint firstItem="KSn-cU-DNs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="66" id="Oha-QT-fJa"/>
-                <constraint firstItem="BCs-Gf-Xup" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cRg-0D-4ma"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="hWj-ju-Kbc" secondAttribute="bottom" constant="10" id="eFz-tM-Lwn"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="KSn-cU-DNs" secondAttribute="bottom" constant="5" id="jF3-wd-vHk"/>
-                <constraint firstItem="hWj-ju-Kbc" firstAttribute="top" secondItem="BCs-Gf-Xup" secondAttribute="bottom" constant="9" id="lsO-Jr-L7f"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hWj-ju-Kbc" secondAttribute="trailing" constant="16" id="qj9-Gq-xZY"/>
+                <constraint firstAttribute="bottom" secondItem="KSn-cU-DNs" secondAttribute="bottom" constant="5" id="0Cp-F1-HGc"/>
+                <constraint firstAttribute="bottom" secondItem="hWj-ju-Kbc" secondAttribute="bottom" constant="5" id="AQk-KG-CIR"/>
+                <constraint firstItem="KSn-cU-DNs" firstAttribute="top" secondItem="BCs-Gf-Xup" secondAttribute="bottom" constant="4" id="IrT-nL-IXJ"/>
+                <constraint firstItem="BCs-Gf-Xup" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ntc-4R-IzA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hWj-ju-Kbc" secondAttribute="trailing" constant="11" id="gHW-tI-BHI"/>
+                <constraint firstItem="hWj-ju-Kbc" firstAttribute="leading" secondItem="KSn-cU-DNs" secondAttribute="trailing" constant="5.5" id="gcY-HW-XKf"/>
+                <constraint firstItem="hWj-ju-Kbc" firstAttribute="top" secondItem="BCs-Gf-Xup" secondAttribute="bottom" constant="6" id="jRQ-90-Cls"/>
+                <constraint firstItem="BCs-Gf-Xup" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zG4-kf-Nl5"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -53,13 +56,16 @@
                 <outlet property="img" destination="BCs-Gf-Xup" id="h8t-6C-9sn"/>
                 <outlet property="lblLikes" destination="hWj-ju-Kbc" id="RfN-e9-Nrh"/>
             </connections>
-            <point key="canvasLocation" x="-339" y="-193"/>
+            <point key="canvasLocation" x="-578.26086956521749" y="-42.522321428571423"/>
         </view>
     </objects>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

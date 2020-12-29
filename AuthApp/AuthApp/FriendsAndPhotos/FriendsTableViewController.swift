@@ -145,6 +145,7 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destination = storyboard.instantiateViewController(identifier: "ImagesViewController") as! ImagesViewController
+        destination.title = "Фото"
         
         let friend: User
         if searchResult.isEmpty {
