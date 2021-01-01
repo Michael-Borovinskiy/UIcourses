@@ -22,7 +22,6 @@ class CustomCellForFriendsAndGroups: UITableViewCell {
         self.uiView.layer.shadowOpacity = 1
         self.uiView.layer.shadowOffset = CGSize.zero
         self.uiView.layer.shadowRadius = 8
-       // self.uiView.layer.shadowPath = UIBezierPath(roundedRect: self.uiView.bounds, cornerRadius: 10).cgPath
         
     }}
 

@@ -14,18 +14,6 @@ class ViewController: UIViewController {
     let loginText: String = "root"
     let pswdTexr: String = "root"
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        uiViewAuth.layer.cornerRadius = 15;
-        uiViewAuth.layer.masksToBounds = true;
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapAction))
-        self.view.addGestureRecognizer(tap)
-        self.imgVk.rotate()
-    }
-    
 
     
     @IBOutlet weak var uiViewAuth: UIView!
@@ -44,6 +32,18 @@ class ViewController: UIViewController {
     @IBAction func cancelBtn(_ sender: Any) {
     }
     @IBAction func enterBtn(_ sender: Any) {
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        uiViewAuth.layer.cornerRadius = 15;
+        uiViewAuth.layer.masksToBounds = true;
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapAction))
+        self.view.addGestureRecognizer(tap)
+        self.imgVk.rotate()
     }
     
     @objc func tapAction() {
