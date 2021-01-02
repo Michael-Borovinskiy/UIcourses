@@ -249,6 +249,7 @@
                         <outlet property="round1" destination="WAl-nJ-PfC" id="XVr-tp-nTe"/>
                         <outlet property="round2" destination="W6K-CC-yut" id="ruB-qR-mYw"/>
                         <outlet property="round3" destination="ge8-nk-bDj" id="YEH-V8-9rw"/>
+                        <outlet property="uiSearchAnimationCell" destination="crD-Wb-Eys" id="1mb-89-FlS"/>
                         <outlet property="uiTableView" destination="VS8-ol-nTV" id="5Qw-dl-ofM"/>
                         <outlet property="uiViewSearchAnimCell" destination="crD-Wb-Eys" id="YRg-TS-ZZn"/>
                     </connections>
