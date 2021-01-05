@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var pswdTxtFieldArea: UITextField!
     @IBOutlet weak var centerVerticalFormContraint: NSLayoutConstraint!
     @IBOutlet weak var imgVk: UIImageView!
+    @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     
     @IBAction func loginTxtField(_ sender: UITextField) {
@@ -97,6 +99,9 @@ class ViewController: UIViewController {
 //            loginTxtFieldArea.text = ""
 //            pswdTxtFieldArea.text = ""
 //        }
+        UIView.animate(withDuration: 0.15, animations: {  //  cкрытие экрана авторизации для кастомного перехода между экранами (черный фон)
+                        self.view.isHidden = true
+        })
         return true
     }
     

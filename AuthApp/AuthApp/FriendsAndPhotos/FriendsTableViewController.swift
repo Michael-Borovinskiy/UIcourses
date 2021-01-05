@@ -73,6 +73,7 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         uiTableView.tableHeaderView = searchController.searchBar
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
+       // navigationController?.delegate = self
         
         uiTableView.register(UINib(nibName: "CustomCellForFriendsAndGroups", bundle: nil), forCellReuseIdentifier: "customCellForTable")
         uiTableView.register(UINib(nibName: "CustomHeaderForFriendScreen", bundle: nil),forHeaderFooterViewReuseIdentifier: "sectionHeader")
@@ -168,7 +169,7 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         round2.layer.removeAllAnimations()
         round3.layer.removeAllAnimations()
         
-        show(destination, sender: self)
+        navigationController?.pushViewController(destination, animated: true)
         
     }
     
@@ -219,3 +220,13 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
     
     
 }
+
+//extension FriendsTableViewController: UINavigationControllerDelegate {
+//    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        if operation == .push {
+//        return CustomPushAnimator()
+//        }
+//        return nil
+//    }
+//
+//}
