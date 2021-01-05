@@ -15,6 +15,7 @@
 		879B988225929915009EFDB7 /* CustomHeaderForFriendScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 879B988125929915009EFDB7 /* CustomHeaderForFriendScreen.xib */; };
 		879F80AA257FDFA0002218CA /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F80A9257FDFA0002218CA /* GroupsTableViewController.swift */; };
 		879F80AD257FE2E7002218CA /* AllGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F80AC257FE2E7002218CA /* AllGroupsTableViewController.swift */; };
+		879FCDBC25A49D0400A46564 /* CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FCDBB25A49D0400A46564 /* CustomInteractiveTransition.swift */; };
 		87A034C6257C300600ECB9DF /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A034C5257C300600ECB9DF /* FriendsTableViewController.swift */; };
 		87A125D525A385100048BD5F /* CustomPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A125D425A385100048BD5F /* CustomPushAnimator.swift */; };
 		87A125DA25A390C40048BD5F /* CustomPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A125D925A390C40048BD5F /* CustomPopAnimator.swift */; };
@@ -44,6 +45,7 @@
 		879B988125929915009EFDB7 /* CustomHeaderForFriendScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderForFriendScreen.xib; sourceTree = "<group>"; };
 		879F80A9257FDFA0002218CA /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		879F80AC257FE2E7002218CA /* AllGroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsTableViewController.swift; sourceTree = "<group>"; };
+		879FCDBB25A49D0400A46564 /* CustomInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInteractiveTransition.swift; sourceTree = "<group>"; };
 		87A034C5257C300600ECB9DF /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		87A125D425A385100048BD5F /* CustomPushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomPushAnimator.swift; path = "../Custom Transition Animations/CustomPushAnimator.swift"; sourceTree = "<group>"; };
 		87A125D925A390C40048BD5F /* CustomPopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopAnimator.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				87A125D925A390C40048BD5F /* CustomPopAnimator.swift */,
 				87A2F411259F3F40005D818B /* BlackPhotoSceneForImagesViewController.swift */,
 				87A125DD25A392C50048BD5F /* CustomNavigationController.swift */,
+				879FCDBB25A49D0400A46564 /* CustomInteractiveTransition.swift */,
 			);
 			path = FriendsAndPhotos;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				879F80AD257FE2E7002218CA /* AllGroupsTableViewController.swift in Sources */,
 				87A125D525A385100048BD5F /* CustomPushAnimator.swift in Sources */,
 				879B9878259292B6009EFDB7 /* CustomHeaderForFriendScreen.swift in Sources */,
+				879FCDBC25A49D0400A46564 /* CustomInteractiveTransition.swift in Sources */,
 				87A22C2525796A03007AC557 /* ViewController.swift in Sources */,
 				87918B61259666400087506D /* NewsViewController.swift in Sources */,
 				87A2F412259F3F40005D818B /* BlackPhotoSceneForImagesViewController.swift in Sources */,
