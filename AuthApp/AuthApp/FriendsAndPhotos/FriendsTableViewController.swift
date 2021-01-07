@@ -144,7 +144,8 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let destination = storyboard.instantiateViewController(identifier: "ImagesViewController") as! ImagesViewController
+        let destination = storyboard.instantiateViewController(identifier: "BlackPhotoSceneForImagesViewController") as! BlackPhotoSceneForImagesViewController
+        //let destination = storyboard.instantiateViewController(identifier: "ImagesViewController") as! ImagesViewController
         destination.title = "Фото"
         
         let friend: User
