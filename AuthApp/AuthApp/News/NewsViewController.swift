@@ -19,7 +19,7 @@ class NewsViewController: UIViewController, UITableViewDataSource ,UITableViewDe
         super.viewDidLoad()
         uiTableView.delegate = self
         uiTableView.dataSource = self
-      
+        
         uiTableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "news")
     }
     

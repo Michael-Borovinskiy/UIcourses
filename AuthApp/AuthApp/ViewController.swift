@@ -60,6 +60,7 @@ class ViewController: UIViewController {
             // Из объекта CGRect получаем высоту клавиатуры
             let keyboardHeight = keyboardRectangle.height
             raiseFormView(to: keyboardHeight)
+            UIView.animate(withDuration: 0.2, animations: {self.imgVk.layer.opacity = 0})
             }
         }
     
@@ -70,6 +71,7 @@ class ViewController: UIViewController {
             self.centerVerticalFormContraint.constant = 0
             // Нужно вызвать, чтобы анимация заработала (только для анимирования contraint'ов)
             self.view.layoutIfNeeded()
+            self.imgVk.layer.opacity = 1
         }
     }
     

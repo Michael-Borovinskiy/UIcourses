@@ -402,10 +402,17 @@
                     <tabBarItem key="tabBarItem" title="Новости" image="eye" catalog="system" id="Lg3-54-uk4">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Hz-uz-jPB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Hz-uz-jPB" customClass="ThirdNavController">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.2521225212" green="0.36700318869999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="xNN-ED-sTe" kind="relationship" relationship="rootViewController" id="RyA-gX-eek"/>
@@ -444,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Th-gG-VCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1967" y="1238"/>
+            <point key="canvasLocation" x="2035" y="1238"/>
         </scene>
         <!--Все группы-->
         <scene sceneID="rdB-ac-bx8">
