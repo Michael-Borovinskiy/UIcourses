@@ -12,7 +12,7 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
     
 
     @IBOutlet weak var uiTableView: UITableView!
-    
+
     var userData: UserData = UserData()
     var searchResult: [User] = []
     var listFirstSurnameLetters: [String] {
@@ -26,19 +26,39 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         return dictLetterUser
     }
     var searchController: UISearchController!
+    @IBOutlet weak var uiViewSearchAnimCell: UIView!
     
+    @IBOutlet weak var round1: UIView!{
+        didSet{
+            self.round1.layer.cornerRadius = round1.frame.width/2.0
+        }
+    }
+    @IBOutlet weak var round2: UIView! {
+        didSet{
+            self.round2.layer.cornerRadius = round1.frame.width/2.0
+        }
+    }
+    @IBOutlet weak var round3: UIView!{
+        didSet{
+            self.round3.layer.cornerRadius = round1.frame.width/2.0
+        }
+    }
     
     func updateSearchResults(for searchController: UISearchController) {
         if let searchtext = searchController.searchBar.text {
             filterSearchText(searchtext)
+            
             uiTableView.reloadData()
         }
     }
 
+
     func filterSearchText (_ searchText: String) {
-       searchResult = userData.user.filter({(searchUser: User)-> Bool in
+        animateSearchPoints()
+        searchResult = userData.user.filter({(searchUser: User)-> Bool in
             let name = searchUser.name.range(of: searchText)
             let surname = searchUser.surname.range(of: searchText)
+        
             return name != nil || surname != nil
         })
         
@@ -55,6 +75,7 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         
         uiTableView.register(UINib(nibName: "CustomCellForFriendsAndGroups", bundle: nil), forCellReuseIdentifier: "customCellForTable")
         uiTableView.register(UINib(nibName: "CustomHeaderForFriendScreen", bundle: nil),forHeaderFooterViewReuseIdentifier: "sectionHeader")
+        
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
@@ -108,14 +129,13 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
     }
     
     
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         if !searchController.isActive  {
             let view = uiTableView.dequeueReusableHeaderFooterView(withIdentifier:
                                                                     "sectionHeader") as! CustomHeaderForFriendScreen
-            
             view.textLabel?.text = "\(listFirstSurnameLetters[section])"
+                        
             return view
         }
         return nil
@@ -125,6 +145,7 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destination = storyboard.instantiateViewController(identifier: "ImagesViewController") as! ImagesViewController
+        destination.title = "Фото"
         
         let friend: User
         if searchResult.isEmpty {
@@ -140,14 +161,24 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         searchController.searchBar.text = ""
         searchController.isActive = false
         searchResult = []
+        round1.layer.removeAllAnimations()
+        round2.layer.removeAllAnimations()
+        round3.layer.removeAllAnimations()
         
         show(destination, sender: self)
         
     }
     
-    
-    
+    func animateSearchPoints() {
+        UIView.animate(withDuration: 0.8, delay: 0.4, options: .allowAnimatedContent, animations: {self.round1.alpha = 1}, completion: {_ in UIView.animate(withDuration: 0.2, animations: {self.round1.alpha = 0})})
+        UIView.animate(withDuration: 0.8, delay: 0.6, options: .allowAnimatedContent, animations:
+            {self.round2.alpha = 1}, completion: {_ in UIView.animate(withDuration: 0.2, animations:
+            {self.round2.alpha = 0})})
+        UIView.animate(withDuration: 0.8, delay: 0.8, options: .allowAnimatedContent, animations: {self.round3.alpha = 1}, completion: {_ in UIView.animate(withDuration: 0.2, animations:{self.round3.alpha = 0})})
+        
 
+    }
+    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        guard segue.identifier == "toCollection" else { return }
 //        guard let destination = segue.destination as? ImagesViewController else { return }

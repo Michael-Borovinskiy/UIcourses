@@ -9,6 +9,8 @@ import UIKit
 
 class ImagesViewController: UIViewController {
     
+    let width = UIScreen.main.bounds.size.width
+    let height = UIScreen.main.bounds.size.height
     
     @IBOutlet weak var uiCollectionView: UICollectionView!
     
@@ -44,11 +46,9 @@ extension ImagesViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.sectionInset = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
-        layout.minimumInteritemSpacing = 03
-        layout.minimumLineSpacing = 03
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 3, bottom: 10, right: 3)
         layout.invalidateLayout()
 
-        return CGSize(width: ((self.view.frame.width/4) - 4), height:((self.view.frame.width / 4) - 4));
+        return CGSize(width: ((width) - 4), height:((width) - 4))//CGSize(width: ((self.view.frame.width/4) - 4), height:((self.view.frame.width / 4) - 4));
     }
 }

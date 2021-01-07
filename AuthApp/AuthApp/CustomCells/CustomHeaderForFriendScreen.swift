@@ -15,8 +15,8 @@ class CustomHeaderForFriendScreen: UITableViewHeaderFooterView {
         
         self.backgroundView = UIView(frame: self.bounds)
         self.backgroundView!.isOpaque = false
-        self.backgroundView!.alpha = 0.05
-        self.backgroundView!.backgroundColor = .green
+        self.backgroundView!.alpha = 0.15
+        self.backgroundView!.backgroundColor = .lightGray
     }
 
 

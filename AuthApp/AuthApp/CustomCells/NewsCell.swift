@@ -16,6 +16,7 @@ class NewsCell: UITableViewCell { // ToDo добавить в ячейку ав�
     @IBOutlet weak var buttonLike: UIButton!
     @IBOutlet weak var commentLike: UIButton!
     @IBOutlet weak var forwardMessage: UIButton!
+    @IBOutlet weak var buttonLooks: UIButton!
     
     func setData (_ textLabel: String ,_ nameImg: String) {
         self.uiLabel.text = textLabel

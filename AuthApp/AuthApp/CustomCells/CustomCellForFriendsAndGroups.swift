@@ -56,10 +56,16 @@ class CustomCellForFriendsAndGroups: UITableViewCell {
         return recognizer
     }
     
+    
     @objc func onLongPress () {        //  функция при длительном нажатии на cell
-        self.uiView.layer.shadowOpacity = Float(Int.random(in: 5...30))
-        self.uiView.layer.shadowRadius = CGFloat(Int.random(in: 5...30))
-        self.uiView.layer.shadowColor = UIColor.random.cgColor
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.4, options: [], animations: {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.uiView.transform = CGAffineTransform(scaleX: 0.75, y: 0.75);
+                      }, completion: {
+                        finished -> Void in
+                        self.uiView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                    })
+        })
     }
     
     
