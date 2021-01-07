@@ -1,14 +1,13 @@
 //
-//  FriendsCell.swift
+//  CustomCellForFriendsAndGroups.swift
 //  AuthApp
 //
-//  Created by Михаил on 10.12.2020.
+//  Created by Михаил on 20.12.2020.
 //
 
 import UIKit
 
-class FriendsCell: UITableViewCell {
-
+class CustomCellForFriendsAndGroups: UITableViewCell {
 
     required init? (coder: NSCoder) {
         super.init(coder: coder)!
@@ -16,32 +15,42 @@ class FriendsCell: UITableViewCell {
     }
     
     @IBOutlet weak var uiView: UIView!
-    {didSet {self.uiView.clipsToBounds = false
+    {didSet {
+        self.uiView.clipsToBounds = false
         self.uiView.layer.shadowColor = UIColor.black.cgColor
         self.uiView.layer.cornerRadius = self.uiView.frame.width/2.0
         self.uiView.layer.shadowOpacity = 1
         self.uiView.layer.shadowOffset = CGSize.zero
-        self.uiView.layer.shadowRadius = 10
-        self.uiView.layer.shadowPath = UIBezierPath(roundedRect: self.uiView.bounds, cornerRadius: 10).cgPath}}
-    
-    
-    
-    @IBOutlet weak var imgFriend: UIImageView! {didSet {
+        self.uiView.layer.shadowRadius = 8
+       // self.uiView.layer.shadowPath = UIBezierPath(roundedRect: self.uiView.bounds, cornerRadius: 10).cgPath
         
-        self.imgFriend.clipsToBounds = true
-        self.imgFriend.layer.cornerRadius = self.imgFriend.frame.width/2.0
-        
-        }
+    }}
+
+    @IBOutlet weak var uiImageView: UIImageView!
+    {didSet {
+        self.uiImageView.clipsToBounds = true
+        self.uiImageView.layer.cornerRadius = self.uiImageView.frame.width/2.0
+    }}
+    
+    @IBOutlet weak var uiLbl: UILabel!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+      
     }
-    @IBOutlet weak var nameFriend: UILabel!
-    
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+    }
     
     func setValues(img: UIImage, name: String) {
-        imgFriend.image = img
-        nameFriend.text = name
+        uiImageView.image = img
+        uiLbl.text = name
 
     }
-
+    
     var ilongPressGestureRecognizer: UILongPressGestureRecognizer { //  recognizer длительного нажатия на cell
         let recognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress))
         return recognizer
@@ -64,4 +73,3 @@ extension UIColor {                 // для выбора рандомного 
                        alpha: 1.0)
     }
 }
-

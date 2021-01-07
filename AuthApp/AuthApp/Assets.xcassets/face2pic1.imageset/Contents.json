@@ -24,6 +24,15 @@
     {
       "idiom" : "iphone",
       "scale" : "3x"
+    },
+    {
+      "filename" : "face2pic1-1.png",
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x"
     }
   ],
   "info" : {

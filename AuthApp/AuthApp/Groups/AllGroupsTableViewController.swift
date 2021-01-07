@@ -18,15 +18,16 @@ class AllGroupsTableViewController: UIViewController, UITableViewDataSource ,UIT
         super.viewDidLoad()
         uiTableView.delegate = self
         uiTableView.dataSource = self
+        
+        uiTableView.register(UINib(nibName: "CustomCellForFriendsAndGroups", bundle: nil), forCellReuseIdentifier: "customCellForTable")
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (groupData.group2.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "allGroupsCell", for: indexPath) as! AllGroupsCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "customCellForTable", for: indexPath) as! CustomCellForFriendsAndGroups //AllGroupsCell
             let image = UIImage(named: groupData.group2[indexPath.row].image)!
             let name = groupData.group2[indexPath.row].name
         
@@ -36,12 +37,8 @@ class AllGroupsTableViewController: UIViewController, UITableViewDataSource ,UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         _ = self.navigationController?.popViewController(animated: true)
-                  let previousViewController = self.navigationController?.viewControllers.last as! GroupsTableViewController
-                   previousViewController.groupFromAllGroups = groupData.group2[uiTableView.indexPathForSelectedRow!.row]
-        
+        let previousViewController = self.navigationController?.viewControllers.last as! GroupsTableViewController
+        previousViewController.groupFromAllGroups = groupData.group2[uiTableView.indexPathForSelectedRow!.row]
     }
     
-    
-
-
 }

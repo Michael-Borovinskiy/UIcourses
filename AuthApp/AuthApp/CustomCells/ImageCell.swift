@@ -10,6 +10,7 @@ import UIKit
 class ImageCell: UICollectionViewCell {
     
     var isLiked: Bool = false
+    var countOfLikes: Int?
     
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var btnLikes: UIButton!
@@ -18,25 +19,34 @@ class ImageCell: UICollectionViewCell {
     
     func setImg (image: UIImage) {
         self.img.image = image
-        self.lblLikes.text = "0"
     }
+    
+    func setLikes (countOfLikes cnt: Int) {
+        self.lblLikes.text = "\(cnt)"
+        countOfLikes = cnt
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         btnLikes.addTarget(self, action: #selector(setLike), for: .touchUpInside)
-        self.tintColor = UIColor.gray
-        
+        self.clipsToBounds = true
+        self.contentMode = .scaleAspectFit
+        self.img.clipsToBounds = true
+        self.img.contentMode = .scaleAspectFit
+        self.layer .borderWidth = 0.5
+        self.layer.borderColor = UIColor.darkGray.cgColor
     }
     
         @objc func setLike() {
             if !isLiked {
-                lblLikes.text = "1"
+                lblLikes.text = "\(countOfLikes! + 1)"
                 lblLikes.textColor = .green
                 btnLikes.setImage(UIImage(systemName: "heart.fill"), for: .normal)
                 isLiked.toggle()
             } else{
-                lblLikes.text = "0"
-                lblLikes.textColor = .black
+                lblLikes.text = "\(countOfLikes!)"
+                lblLikes.textColor = .white
                 btnLikes.setImage(UIImage(systemName: "heart"), for: .normal)
                 isLiked.toggle()
             }
