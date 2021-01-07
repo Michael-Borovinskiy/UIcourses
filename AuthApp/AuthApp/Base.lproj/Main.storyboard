@@ -149,6 +149,7 @@
                     <connections>
                         <segue destination="Zk0-1y-7Ig" kind="relationship" relationship="viewControllers" id="mvY-Nk-5qO"/>
                         <segue destination="eEz-qH-cBl" kind="relationship" relationship="viewControllers" id="vL9-sE-lw8"/>
+                        <segue destination="AKS-aA-cbQ" kind="relationship" relationship="viewControllers" id="nqc-BH-z3d"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTY-MB-vCp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -201,55 +202,6 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" red="0.071168434050000007" green="0.1006107234" blue="0.079822517379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" systemColor="systemGray6Color"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="75.333335876464844" id="9SN-sX-Vji" customClass="FriendsCell" customModule="AuthApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="75.333335876464844"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9SN-sX-Vji" id="m9V-hU-PFa">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75.333335876464844"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHp-1G-dch">
-                                                    <rect key="frame" x="110" y="27" width="258" height="21.333333333333329"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="258" id="Yfk-Hg-BiK"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mx-U1-4yE">
-                                                    <rect key="frame" x="30" y="17.000000000000004" width="60" height="52.333333333333343"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E52-9G-4rs">
-                                                            <rect key="frame" x="8" y="5" width="44.333333333333336" height="44.333333333333336"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="EA3-lN-s4l"/>
-                                                        <constraint firstAttribute="height" constant="60" id="QxI-qX-hxW"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="3mx-U1-4yE" secondAttribute="bottom" constant="6" id="3AS-VO-swI"/>
-                                                <constraint firstItem="3mx-U1-4yE" firstAttribute="leading" secondItem="m9V-hU-PFa" secondAttribute="leadingMargin" constant="10" id="Vpf-1B-vZS"/>
-                                                <constraint firstItem="3mx-U1-4yE" firstAttribute="top" secondItem="m9V-hU-PFa" secondAttribute="topMargin" constant="6" id="d03-Vj-rNN"/>
-                                                <constraint firstItem="jHp-1G-dch" firstAttribute="leading" secondItem="3mx-U1-4yE" secondAttribute="trailing" constant="20" id="nvT-YY-M4c"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="jHp-1G-dch" secondAttribute="bottom" constant="16" id="tUj-Bx-tEc"/>
-                                                <constraint firstItem="jHp-1G-dch" firstAttribute="top" secondItem="m9V-hU-PFa" secondAttribute="topMargin" constant="16" id="utS-dY-UBz"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="imgFriend" destination="E52-9G-4rs" id="ESn-9V-b0u"/>
-                                            <outlet property="nameFriend" destination="jHp-1G-dch" id="5VJ-1h-eX7"/>
-                                            <outlet property="uiView" destination="3mx-U1-4yE" id="eGe-oX-KQE"/>
-                                            <segue destination="bUs-KL-eQ1" kind="show" identifier="toCollection" id="x9w-Xz-pJ2"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1AY-aX-AIO"/>
@@ -279,7 +231,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5ci-JU-EaA">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" red="0.071168434050000007" green="0.1006107234" blue="0.079822517379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zaE-7f-00w">
                                     <size key="itemSize" width="162" height="189"/>
@@ -368,6 +320,54 @@
             </objects>
             <point key="canvasLocation" x="2313.04347826087" y="474.77678571428567"/>
         </scene>
+        <!--News-->
+        <scene sceneID="z1w-Ws-UgD">
+            <objects>
+                <navigationController id="AKS-aA-cbQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="News" image="eye" catalog="system" id="Lg3-54-uk4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Hz-uz-jPB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xNN-ED-sTe" kind="relationship" relationship="rootViewController" id="RyA-gX-eek"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d4I-Uz-X5n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1558" y="1143"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="4AC-mg-Q0K">
+            <objects>
+                <viewController id="xNN-ED-sTe" customClass="NewsViewController" customModule="AuthApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wfT-j7-e3A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hKX-0x-Gza">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="W5a-PQ-X82"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hKX-0x-Gza" firstAttribute="top" secondItem="W5a-PQ-X82" secondAttribute="top" id="1Bq-zd-RBx"/>
+                            <constraint firstItem="W5a-PQ-X82" firstAttribute="bottom" secondItem="hKX-0x-Gza" secondAttribute="bottom" id="8EK-df-J7N"/>
+                            <constraint firstItem="W5a-PQ-X82" firstAttribute="trailing" secondItem="hKX-0x-Gza" secondAttribute="trailing" id="PvK-pY-QbK"/>
+                            <constraint firstItem="hKX-0x-Gza" firstAttribute="leading" secondItem="W5a-PQ-X82" secondAttribute="leading" id="hal-Fp-3yb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="News" id="lIG-J7-8ue"/>
+                    <connections>
+                        <outlet property="uiTableView" destination="hKX-0x-Gza" id="eqE-d9-u1q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Th-gG-VCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2313" y="1142"/>
+        </scene>
         <!--All Groups-->
         <scene sceneID="rdB-ac-bx8">
             <objects>
@@ -402,6 +402,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eye" catalog="system" width="128" height="81"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="vkLogo" width="512" height="512"/>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="584" id="KGk-i7-Jjw" customClass="NewsCell" customModule="AuthApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="436" height="584"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="436" height="584"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ш" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDr-JI-asx">
+                        <rect key="frame" x="20" y="34" width="396" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="396" id="qIL-Ke-4Wj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Zl-O4-p55">
+                        <rect key="frame" x="0.0" y="72" width="436" height="436"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="436" id="K9l-1d-xPH"/>
+                            <constraint firstAttribute="width" constant="436" id="ux6-4P-4aR"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5X-Q8-3gN">
+                        <rect key="frame" x="30" y="530" width="20.5" height="22"/>
+                        <state key="normal" image="heart" catalog="system"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgl-OJ-ffJ">
+                        <rect key="frame" x="113.5" y="530" width="21" height="22"/>
+                        <state key="normal" image="arrowshape.turn.up.right" catalog="system"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQn-hV-6n5">
+                        <rect key="frame" x="73" y="530" width="21.5" height="23"/>
+                        <state key="normal" image="highlighter" catalog="system"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="bgl-OJ-ffJ" secondAttribute="bottom" constant="32" id="1Ds-Rd-GK5"/>
+                    <constraint firstItem="vDr-JI-asx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="34" id="32s-ZA-ztK"/>
+                    <constraint firstAttribute="trailing" secondItem="vDr-JI-asx" secondAttribute="trailing" constant="20" id="3Is-RC-vJQ"/>
+                    <constraint firstAttribute="bottom" secondItem="q5X-Q8-3gN" secondAttribute="bottom" constant="32" id="7ft-5H-KyK"/>
+                    <constraint firstItem="sQn-hV-6n5" firstAttribute="leading" secondItem="q5X-Q8-3gN" secondAttribute="trailing" constant="22.5" id="TKm-ro-k62"/>
+                    <constraint firstItem="bgl-OJ-ffJ" firstAttribute="top" secondItem="0Zl-O4-p55" secondAttribute="bottom" constant="22" id="Yr8-rY-m5G"/>
+                    <constraint firstItem="bgl-OJ-ffJ" firstAttribute="leading" secondItem="sQn-hV-6n5" secondAttribute="trailing" constant="19" id="enP-wl-lzS"/>
+                    <constraint firstAttribute="bottom" secondItem="sQn-hV-6n5" secondAttribute="bottom" constant="31" id="in4-XM-3OS"/>
+                    <constraint firstItem="0Zl-O4-p55" firstAttribute="top" secondItem="vDr-JI-asx" secondAttribute="bottom" constant="17.5" id="kRX-ve-tnr"/>
+                    <constraint firstItem="q5X-Q8-3gN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="svo-df-a0x"/>
+                    <constraint firstItem="vDr-JI-asx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="urR-Tg-Q1Q"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="buttonLike" destination="q5X-Q8-3gN" id="cbq-3a-amH"/>
+                <outlet property="commentLike" destination="sQn-hV-6n5" id="1wO-wd-U9q"/>
+                <outlet property="forwardMessage" destination="bgl-OJ-ffJ" id="31u-4S-a6q"/>
+                <outlet property="uiImageView" destination="0Zl-O4-p55" id="OBg-O5-D6k"/>
+                <outlet property="uiLabel" destination="vDr-JI-asx" id="xcq-tM-tIM"/>
+            </connections>
+            <point key="canvasLocation" x="-188.40579710144928" y="26.785714285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="highlighter" catalog="system" width="128" height="119"/>
+    </resources>
+</document>
