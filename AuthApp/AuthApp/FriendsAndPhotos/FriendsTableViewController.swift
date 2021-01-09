@@ -69,20 +69,18 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         super.viewDidLoad()
         uiTableView.delegate = self
         uiTableView.dataSource = self
-        searchController = UISearchController(searchResultsController: nil)
-        uiTableView.tableHeaderView = searchController.searchBar
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-       // navigationController?.delegate = self
-        
         uiTableView.register(UINib(nibName: "CustomCellForFriendsAndGroups", bundle: nil), forCellReuseIdentifier: "customCellForTable")
         uiTableView.register(UINib(nibName: "CustomHeaderForFriendScreen", bundle: nil),forHeaderFooterViewReuseIdentifier: "sectionHeader")
+        setSearchController()
         setConstraintsForAnimatedRounds ()
-
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return listFirstSurnameLetters
+        if searchController.isActive {
+            return nil
+        } else {
+            return listFirstSurnameLetters
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -181,6 +179,18 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         UIView.animate(withDuration: 0.8, delay: 0.8, options: .allowAnimatedContent, animations: {self.round3.alpha = 1}, completion: {_ in UIView.animate(withDuration: 0.2, animations:{self.round3.alpha = 0})})
         
 
+    }
+    
+    func setSearchController() {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.barTintColor = .white
+        searchController.searchBar.placeholder = "Поиск по ФИО"
+        searchController.searchBar.searchTextField.backgroundColor = .white
+        searchController.searchBar.setValue("Отмена", forKey: "cancelButtonText")
+        uiTableView.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+       
     }
     
     func setConstraintsForAnimatedRounds () {   // установлены констрейнты для размещения анимированных кругов по центру экрана относительно ячейки superview
