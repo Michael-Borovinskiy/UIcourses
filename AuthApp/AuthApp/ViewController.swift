@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     let loginText: String = "root"
     let pswdTexr: String = "root"
+    var uiViewWhiteScreen: UIView? = UIView()
     
 
     
@@ -46,6 +47,8 @@ class ViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapAction))
         self.view.addGestureRecognizer(tap)
         self.imgVk.rotate()
+        setWhiteScreenDefault()
+        
     }
     
     @objc func tapAction() {
@@ -101,8 +104,9 @@ class ViewController: UIViewController {
 //            loginTxtFieldArea.text = ""
 //            pswdTxtFieldArea.text = ""
 //        }
-        UIView.animate(withDuration: 0.15, animations: {  //  cкрытие экрана авторизации для кастомного перехода между экранами (черный фон)
-                        self.view.isHidden = true
+        UIView.animate(withDuration: 0.2, animations: { [self] in  //  cкрытие экрана авторизации для кастомного перехода между экранами (черный фон)
+            self.view = self.uiViewWhiteScreen
+            uiViewWhiteScreen!.layer.opacity = 1
         })
         return true
     }
@@ -117,6 +121,13 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: self.view.window)
     }
     
+    
+    func setWhiteScreenDefault() {
+        uiViewWhiteScreen = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width,height: view.frame.height))
+        uiViewWhiteScreen!.backgroundColor = .white
+        uiViewWhiteScreen!.bounds = self.view.bounds
+        uiViewWhiteScreen!.layer.opacity = 0
+    }
 }
 
 
