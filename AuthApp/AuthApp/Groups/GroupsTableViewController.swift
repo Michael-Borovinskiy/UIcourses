@@ -70,7 +70,9 @@ class GroupsTableViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
-    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Удалить"
+    }
     
     
     

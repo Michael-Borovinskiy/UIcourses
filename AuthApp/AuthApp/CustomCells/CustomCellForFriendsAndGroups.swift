@@ -11,7 +11,6 @@ class CustomCellForFriendsAndGroups: UITableViewCell {
 
     required init? (coder: NSCoder) {
         super.init(coder: coder)!
-        addGestureRecognizer(ilongPressGestureRecognizer)
     }
     
     @IBOutlet weak var uiView: UIView!
@@ -21,7 +20,7 @@ class CustomCellForFriendsAndGroups: UITableViewCell {
         self.uiView.layer.cornerRadius = self.uiView.frame.width/2.0
         self.uiView.layer.shadowOpacity = 1
         self.uiView.layer.shadowOffset = CGSize.zero
-        self.uiView.layer.shadowRadius = 8
+        self.uiView.layer.shadowRadius = 4
         
     }}
 
@@ -36,7 +35,7 @@ class CustomCellForFriendsAndGroups: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-      
+        self.uiView.addGestureRecognizer(pressGestureRecognizer)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -50,8 +49,8 @@ class CustomCellForFriendsAndGroups: UITableViewCell {
 
     }
     
-    var ilongPressGestureRecognizer: UILongPressGestureRecognizer { //  recognizer длительного нажатия на cell
-        let recognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress))
+    var pressGestureRecognizer: UITapGestureRecognizer { //  recognizer длительного нажатия на cell
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(onLongPress))
         return recognizer
     }
     
@@ -61,12 +60,14 @@ class CustomCellForFriendsAndGroups: UITableViewCell {
             UIView.animate(withDuration: 0.5, animations: {
                 self.uiView.transform = CGAffineTransform(scaleX: 0.75, y: 0.75);
                       }, completion: {
-                        finished -> Void in
-                        self.uiView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                        _ in
+                        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.7, options: [], animations: {
+                                        self.uiView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)})
                     })
         })
     }
     
+
     
 }
 
