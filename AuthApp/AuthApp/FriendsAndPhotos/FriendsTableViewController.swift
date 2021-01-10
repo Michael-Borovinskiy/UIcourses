@@ -43,6 +43,7 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
             self.round3.layer.cornerRadius = round1.frame.width/2.0
         }
     }
+    @IBOutlet weak var uiSearchAnimationCell: UIView!
     
     func updateSearchResults(for searchController: UISearchController) {
         if let searchtext = searchController.searchBar.text {
@@ -72,10 +73,12 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         uiTableView.tableHeaderView = searchController.searchBar
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
+       // navigationController?.delegate = self
         
         uiTableView.register(UINib(nibName: "CustomCellForFriendsAndGroups", bundle: nil), forCellReuseIdentifier: "customCellForTable")
         uiTableView.register(UINib(nibName: "CustomHeaderForFriendScreen", bundle: nil),forHeaderFooterViewReuseIdentifier: "sectionHeader")
-        
+        setConstraintsForAnimatedRounds ()
+
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
@@ -166,7 +169,7 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         round2.layer.removeAllAnimations()
         round3.layer.removeAllAnimations()
         
-        show(destination, sender: self)
+        navigationController?.pushViewController(destination, animated: true)
         
     }
     
@@ -180,6 +183,34 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
 
     }
     
+    func setConstraintsForAnimatedRounds () {   // установлены констрейнты для размещения анимированных кругов по центру экрана относительно ячейки superview
+        
+        round1.translatesAutoresizingMaskIntoConstraints = false
+        round2.translatesAutoresizingMaskIntoConstraints = false
+        round3.translatesAutoresizingMaskIntoConstraints = false
+        
+        let horizontalConstraint = NSLayoutConstraint(item: round1!, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: round2, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: -20)
+        let verticalConstraint = NSLayoutConstraint(item: round1!, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: uiSearchAnimationCell, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 2)
+        let widthConstraint = NSLayoutConstraint(item: round1!, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 20)
+        let heightConstraint = NSLayoutConstraint(item: round1!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 20)
+            NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
+
+        let horizontalConstraint2 = NSLayoutConstraint(item: round2!, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: uiSearchAnimationCell, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant:
+                                                        0)
+        let verticalConstraint2 = NSLayoutConstraint(item: round2!, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: uiSearchAnimationCell, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 2)
+        let widthConstraint2 = NSLayoutConstraint(item: round2!, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 20)
+        let heightConstraint2 = NSLayoutConstraint(item: round2!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 20)
+            NSLayoutConstraint.activate([horizontalConstraint2, verticalConstraint2, widthConstraint2, heightConstraint2])
+
+        let horizontalConstraint3 = NSLayoutConstraint(item: round3!, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: round2, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1, constant: 20)
+        let verticalConstraint3 = NSLayoutConstraint(item: round3!, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: uiSearchAnimationCell, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 2)
+        let widthConstraint3 = NSLayoutConstraint(item: round3!, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 20)
+        let heightConstraint3 = NSLayoutConstraint(item: round3!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 20)
+            NSLayoutConstraint.activate([horizontalConstraint3, verticalConstraint3, widthConstraint3, heightConstraint3])
+        
+    }
+    
+    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        guard segue.identifier == "toCollection" else { return }
 //        guard let destination = segue.destination as? ImagesViewController else { return }
@@ -189,3 +220,13 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
     
     
 }
+
+//extension FriendsTableViewController: UINavigationControllerDelegate {
+//    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        if operation == .push {
+//        return CustomPushAnimator()
+//        }
+//        return nil
+//    }
+//
+//}

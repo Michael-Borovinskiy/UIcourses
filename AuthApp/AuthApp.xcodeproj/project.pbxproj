@@ -15,7 +15,11 @@
 		879B988225929915009EFDB7 /* CustomHeaderForFriendScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 879B988125929915009EFDB7 /* CustomHeaderForFriendScreen.xib */; };
 		879F80AA257FDFA0002218CA /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F80A9257FDFA0002218CA /* GroupsTableViewController.swift */; };
 		879F80AD257FE2E7002218CA /* AllGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F80AC257FE2E7002218CA /* AllGroupsTableViewController.swift */; };
+		879FCDBC25A49D0400A46564 /* CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FCDBB25A49D0400A46564 /* CustomInteractiveTransition.swift */; };
 		87A034C6257C300600ECB9DF /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A034C5257C300600ECB9DF /* FriendsTableViewController.swift */; };
+		87A125D525A385100048BD5F /* CustomPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A125D425A385100048BD5F /* CustomPushAnimator.swift */; };
+		87A125DA25A390C40048BD5F /* CustomPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A125D925A390C40048BD5F /* CustomPopAnimator.swift */; };
+		87A125DE25A392C50048BD5F /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A125DD25A392C50048BD5F /* CustomNavigationController.swift */; };
 		87A22C2125796A03007AC557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A22C2025796A03007AC557 /* AppDelegate.swift */; };
 		87A22C2325796A03007AC557 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A22C2225796A03007AC557 /* SceneDelegate.swift */; };
 		87A22C2525796A03007AC557 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A22C2425796A03007AC557 /* ViewController.swift */; };
@@ -41,7 +45,11 @@
 		879B988125929915009EFDB7 /* CustomHeaderForFriendScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderForFriendScreen.xib; sourceTree = "<group>"; };
 		879F80A9257FDFA0002218CA /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		879F80AC257FE2E7002218CA /* AllGroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsTableViewController.swift; sourceTree = "<group>"; };
+		879FCDBB25A49D0400A46564 /* CustomInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInteractiveTransition.swift; sourceTree = "<group>"; };
 		87A034C5257C300600ECB9DF /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		87A125D425A385100048BD5F /* CustomPushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomPushAnimator.swift; path = "../Custom Transition Animations/CustomPushAnimator.swift"; sourceTree = "<group>"; };
+		87A125D925A390C40048BD5F /* CustomPopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopAnimator.swift; sourceTree = "<group>"; };
+		87A125DD25A392C50048BD5F /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		87A22C1D25796A03007AC557 /* AuthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A22C2025796A03007AC557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87A22C2225796A03007AC557 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +142,11 @@
 			children = (
 				87AE8B2E2583E9EC007DF0CD /* ImagesViewController.swift */,
 				87A034C5257C300600ECB9DF /* FriendsTableViewController.swift */,
+				87A125D425A385100048BD5F /* CustomPushAnimator.swift */,
+				87A125D925A390C40048BD5F /* CustomPopAnimator.swift */,
 				87A2F411259F3F40005D818B /* BlackPhotoSceneForImagesViewController.swift */,
+				87A125DD25A392C50048BD5F /* CustomNavigationController.swift */,
+				879FCDBB25A49D0400A46564 /* CustomInteractiveTransition.swift */,
 			);
 			path = FriendsAndPhotos;
 			sourceTree = "<group>";
@@ -235,9 +247,12 @@
 				87A454E1258FA7980014CD95 /* CustomCellForFriendsAndGroups.swift in Sources */,
 				87AE8B3525841145007DF0CD /* GroupData.swift in Sources */,
 				87AE8B2F2583E9EC007DF0CD /* ImagesViewController.swift in Sources */,
+				87A125DA25A390C40048BD5F /* CustomPopAnimator.swift in Sources */,
 				87918B6A25966D540087506D /* News.swift in Sources */,
 				879F80AD257FE2E7002218CA /* AllGroupsTableViewController.swift in Sources */,
+				87A125D525A385100048BD5F /* CustomPushAnimator.swift in Sources */,
 				879B9878259292B6009EFDB7 /* CustomHeaderForFriendScreen.swift in Sources */,
+				879FCDBC25A49D0400A46564 /* CustomInteractiveTransition.swift in Sources */,
 				87A22C2525796A03007AC557 /* ViewController.swift in Sources */,
 				87918B61259666400087506D /* NewsViewController.swift in Sources */,
 				87A2F412259F3F40005D818B /* BlackPhotoSceneForImagesViewController.swift in Sources */,
@@ -247,6 +262,7 @@
 				87918B66259666D00087506D /* NewsCell.swift in Sources */,
 				87AE8B292583D68A007DF0CD /* UserData.swift in Sources */,
 				87A22C2325796A03007AC557 /* SceneDelegate.swift in Sources */,
+				87A125DE25A392C50048BD5F /* CustomNavigationController.swift in Sources */,
 				87AE8B322583EA4A007DF0CD /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

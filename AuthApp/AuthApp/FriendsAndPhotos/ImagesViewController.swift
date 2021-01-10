@@ -22,6 +22,8 @@ class ImagesViewController: UIViewController {
         self.uiCollectionView.delegate = self
         
         uiCollectionView.register(UINib(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "imgcell_fromXib")
+        
+
     }
     
 }

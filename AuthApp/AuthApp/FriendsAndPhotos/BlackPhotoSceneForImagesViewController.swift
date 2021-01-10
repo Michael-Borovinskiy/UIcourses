@@ -8,7 +8,7 @@
 import UIKit
 
 class BlackPhotoSceneForImagesViewController: UIViewController {
-    
+
     var user: User?
     var imagewidth: CGFloat?
     var currentImageNum = 0
@@ -25,8 +25,13 @@ class BlackPhotoSceneForImagesViewController: UIViewController {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
         swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeLeft)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.uiImageView.image = (self.user?.photos[self.currentImageNum])
     }
+    
     
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
 

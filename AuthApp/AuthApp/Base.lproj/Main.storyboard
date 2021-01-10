@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AuthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="AuthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +55,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                         <state key="normal" title="Войти">
-                                            <color key="titleColor" red="0.071168434050000007" green="0.1006107234" blue="0.079822517379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                         </state>
@@ -72,7 +72,8 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Отмена">
-                                            <color key="titleColor" red="0.071168434050000007" green="0.1006107234" blue="0.079822517379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                         </state>
                                         <connections>
@@ -120,7 +121,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="q6L-sD-ueh" id="N2G-Tc-EkW"/>
                         <outlet property="centerVerticalFormContraint" destination="RjI-ag-ydR" id="B1a-98-o3h"/>
+                        <outlet property="enterButton" destination="2XU-5u-O7z" id="Zwi-0j-Hhe"/>
                         <outlet property="imgVk" destination="0b6-wt-Nw9" id="0xt-lv-T4N"/>
                         <outlet property="loginLbl" destination="JAL-sb-TCq" id="Ykn-VL-VuH"/>
                         <outlet property="loginTxtFieldArea" destination="vS4-hN-74g" id="lrz-xV-3Wn"/>
@@ -164,7 +167,7 @@
         <!--FirstNavController-->
         <scene sceneID="SE1-5P-vXK">
             <objects>
-                <navigationController id="Zk0-1y-7Ig" sceneMemberID="viewController">
+                <navigationController id="Zk0-1y-7Ig" customClass="CustomNavigationController" customModule="AuthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Друзья" image="person" catalog="system" id="gWd-xd-uxf">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
@@ -198,7 +201,7 @@
         <!--Мои друзья-->
         <scene sceneID="nO5-ZU-wGD">
             <objects>
-                <viewController id="4CC-GY-4na" customClass="FriendsTableViewController" customModule="AuthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FriendsTableViewController" id="4CC-GY-4na" customClass="FriendsTableViewController" customModule="AuthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K8f-pd-bMg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -249,6 +252,7 @@
                         <outlet property="round1" destination="WAl-nJ-PfC" id="XVr-tp-nTe"/>
                         <outlet property="round2" destination="W6K-CC-yut" id="ruB-qR-mYw"/>
                         <outlet property="round3" destination="ge8-nk-bDj" id="YEH-V8-9rw"/>
+                        <outlet property="uiSearchAnimationCell" destination="crD-Wb-Eys" id="1mb-89-FlS"/>
                         <outlet property="uiTableView" destination="VS8-ol-nTV" id="5Qw-dl-ofM"/>
                         <outlet property="uiViewSearchAnimCell" destination="crD-Wb-Eys" id="YRg-TS-ZZn"/>
                     </connections>
