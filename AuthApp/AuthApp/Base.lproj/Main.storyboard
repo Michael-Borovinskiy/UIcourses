@@ -27,14 +27,14 @@
                                             <action selector="loginTxtField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="mT8-zy-bTc"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JAL-sb-TCq">
-                                        <rect key="frame" x="129" y="17" width="49" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JAL-sb-TCq">
+                                        <rect key="frame" x="50" y="17" width="206" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IyS-YC-Hhd">
-                                        <rect key="frame" x="124" y="98" width="59" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IyS-YC-Hhd">
+                                        <rect key="frame" x="50" y="98" width="206" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r9N-Cw-YoF">
                                         <rect key="frame" x="32" y="127" width="242" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <connections>
                                             <action selector="pswdTxtField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="qPS-5Y-8hz"/>
                                         </connections>
@@ -96,19 +96,19 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="r9N-Cw-YoF" firstAttribute="top" secondItem="IyS-YC-Hhd" secondAttribute="bottom" constant="8" id="14G-sZ-Z1O"/>
-                                    <constraint firstAttribute="trailing" secondItem="IyS-YC-Hhd" secondAttribute="trailing" constant="123" id="268-g5-MlO"/>
+                                    <constraint firstAttribute="trailing" secondItem="IyS-YC-Hhd" secondAttribute="trailing" constant="50" id="268-g5-MlO"/>
                                     <constraint firstAttribute="trailing" secondItem="r9N-Cw-YoF" secondAttribute="trailing" constant="32" id="29H-BY-l7U"/>
                                     <constraint firstAttribute="height" constant="266" id="3JR-TI-XgM"/>
                                     <constraint firstItem="vS4-hN-74g" firstAttribute="leading" secondItem="qfv-dp-g9V" secondAttribute="leading" constant="32" id="4NN-VT-kur"/>
                                     <constraint firstAttribute="bottom" secondItem="q6L-sD-ueh" secondAttribute="bottom" constant="23" id="BzI-gQ-W4A"/>
                                     <constraint firstAttribute="bottom" secondItem="2XU-5u-O7z" secondAttribute="bottom" constant="23" id="D3j-jE-8Wa"/>
                                     <constraint firstAttribute="trailing" secondItem="vS4-hN-74g" secondAttribute="trailing" constant="32" id="ELe-8R-Qov"/>
-                                    <constraint firstItem="JAL-sb-TCq" firstAttribute="leading" secondItem="qfv-dp-g9V" secondAttribute="leading" constant="129" id="FPv-6T-DN9"/>
+                                    <constraint firstItem="JAL-sb-TCq" firstAttribute="leading" secondItem="qfv-dp-g9V" secondAttribute="leading" constant="50" id="FPv-6T-DN9"/>
                                     <constraint firstItem="JAL-sb-TCq" firstAttribute="top" secondItem="qfv-dp-g9V" secondAttribute="top" constant="17" id="JBQ-dp-fNI"/>
-                                    <constraint firstItem="IyS-YC-Hhd" firstAttribute="leading" secondItem="qfv-dp-g9V" secondAttribute="leading" constant="124" id="Ktb-cy-NBm"/>
+                                    <constraint firstItem="IyS-YC-Hhd" firstAttribute="leading" secondItem="qfv-dp-g9V" secondAttribute="leading" constant="50" id="Ktb-cy-NBm"/>
                                     <constraint firstItem="5aQ-I4-0Tp" firstAttribute="top" secondItem="qfv-dp-g9V" secondAttribute="top" constant="7" id="Rt4-De-ABl"/>
                                     <constraint firstAttribute="trailing" secondItem="q6L-sD-ueh" secondAttribute="trailing" constant="32" id="WRP-tV-n7Z"/>
-                                    <constraint firstAttribute="trailing" secondItem="JAL-sb-TCq" secondAttribute="trailing" constant="128" id="WpM-b6-87E"/>
+                                    <constraint firstAttribute="trailing" secondItem="JAL-sb-TCq" secondAttribute="trailing" constant="50" id="WpM-b6-87E"/>
                                     <constraint firstItem="r9N-Cw-YoF" firstAttribute="leading" secondItem="qfv-dp-g9V" secondAttribute="leading" constant="32" id="eeU-HA-WfL"/>
                                     <constraint firstAttribute="trailing" secondItem="5aQ-I4-0Tp" secondAttribute="trailing" id="jOr-hI-Yhh"/>
                                     <constraint firstItem="2XU-5u-O7z" firstAttribute="leading" secondItem="qfv-dp-g9V" secondAttribute="leading" constant="32" id="ni0-EO-aZo"/>
@@ -306,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5L-uJ-Yt0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3115.9420289855075" y="-206.25"/>
+            <point key="canvasLocation" x="3623" y="-206"/>
         </scene>
         <!--Фотографии-->
         <scene sceneID="Vzg-4G-kHL">
@@ -344,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Nr-K9-nqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3116" y="-851"/>
+            <point key="canvasLocation" x="2974" y="-206"/>
         </scene>
         <!--SecondNavController-->
         <scene sceneID="anj-H9-VEb">

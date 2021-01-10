@@ -9,7 +9,10 @@ import UIKit
 
 class ImageCell: UICollectionViewCell {
     
+    var user: User?
+    var indexCell: Int?
     var isLiked: Bool = false
+        
     var countOfLikes: Int?
     
     @IBOutlet weak var img: UIImageView!
@@ -27,30 +30,44 @@ class ImageCell: UICollectionViewCell {
         countOfLikes = cnt
     }
     
+    func setIsLiked (bool isLiked: Bool) {
+        self.isLiked = isLiked
+        if isLiked {
+            lblLikes.textColor = .green
+            btnLikes.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+       
         btnLikes.addTarget(self, action: #selector(setLike), for: .touchUpInside)
-        //self.clipsToBounds = true
-        //self.contentMode = .scaleAspectFit
-        //self.img.clipsToBounds = true
-        //self.img.contentMode = .scaleAspectFit
-        //self.img.frame
         self.layer .borderWidth = 2
         self.layer.borderColor = UIColor.darkGray.cgColor
-        
     }
     
         @objc func setLike() {
             if !isLiked {
                 animateLike()
                 lblLikes.text = "\(countOfLikes! + 1)"
+                user?.photoLikes[indexCell!] = countOfLikes! + 1
+                user?.isLiked[indexCell!].toggle()
                 lblLikes.textColor = .green
                 btnLikes.setImage(UIImage(systemName: "heart.fill"), for: .normal)
                 isLiked.toggle()
-            } else{
+            } else if lblLikes.textColor == .green {
+                animateLikeBack()
+                lblLikes.text = "\(countOfLikes! - 1)"
+                user?.photoLikes[indexCell!] = countOfLikes! - 1
+                user?.isLiked[indexCell!].toggle()
+                lblLikes.textColor = .systemPurple
+                btnLikes.setImage(UIImage(systemName: "heart"), for: .normal)
+                isLiked.toggle()
+            } else {
                 animateLikeBack()
                 lblLikes.text = "\(countOfLikes!)"
+                user?.photoLikes[indexCell!] = countOfLikes! - 1
+                user?.isLiked[indexCell!].toggle()
                 lblLikes.textColor = .systemPurple
                 btnLikes.setImage(UIImage(systemName: "heart"), for: .normal)
                 isLiked.toggle()

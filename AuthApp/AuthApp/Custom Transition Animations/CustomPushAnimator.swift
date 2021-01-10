@@ -36,8 +36,7 @@ final class CustomPushAnimator: NSObject, UIViewControllerAnimatedTransitioning 
                                                        animations: {
                                                         let rot = CGAffineTransform(rotationAngle: CGFloat.pi/2)
                                                         let translationX = CGAffineTransform(translationX: -source.view.frame.height, y: source.view.frame.height)
-                                                       
-                                                        // let scale = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                          
                                                         source.view.transform = translationX.concatenating(rot)
                                     })
                                     UIView.addKeyframe(withRelativeStartTime: 0.6,
@@ -45,7 +44,7 @@ final class CustomPushAnimator: NSObject, UIViewControllerAnimatedTransitioning 
                                                        animations: {
                                                            let rot2 = CGAffineTransform(rotationAngle: -CGFloat.pi/2)
                                                            let translation = CGAffineTransform(translationX: containerViewFrame.width, y: containerViewFrame.height)
-                                                           //let scale = CGAffineTransform(scaleX: 1.2, y: 1.2)
+
                                                         destination.view.transform = translation.concatenating(rot2)
                                                         
                                     })

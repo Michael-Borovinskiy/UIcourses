@@ -48,6 +48,7 @@ class ViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapAction))
         self.view.addGestureRecognizer(tap)
         self.downMoveButton.addTarget(self, action: #selector(downInViewAuth), for: .touchUpInside)
+        self.cancelButton.addTarget(self, action: #selector(clearTextFields), for: .touchUpInside)
         self.imgVk.rotate()
         setWhiteScreenDefault()
         
@@ -103,23 +104,31 @@ class ViewController: UIViewController {
         return loginTxtFieldArea.text == loginText && pswdTxtFieldArea.text == pswdTexr
     }
     
+    @objc func clearTextFields () {
+        self.loginTxtFieldArea.text = ""
+        self.pswdTxtFieldArea.text = ""
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-//        if !isApproved () {           //закомментировано для быстрого доступа при проверке ДЗ
-//            let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
-//            // Создаем кнопку для UIAlertController
-//            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//            // Добавляем кнопку на UIAlertController
-//            alert.addAction(action)
-//            // Показываем UIAlertController
-//            present(alert, animated: true, completion: nil)
-//            loginTxtFieldArea.text = ""
-//            pswdTxtFieldArea.text = ""
-//        }
+       if !isApproved () {           //закомментировано для быстрого доступа при проверке ДЗ
+            let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
+            // Создаем кнопку для UIAlertController
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            // Добавляем кнопку на UIAlertController
+            alert.addAction(action)
+            // Показываем UIAlertController
+            present(alert, animated: true, completion: nil)
+            loginTxtFieldArea.text = ""
+            pswdTxtFieldArea.text = ""
+       }else{
         UIView.animate(withDuration: 0.2, animations: { [self] in  //  cкрытие экрана авторизации для кастомного перехода между экранами (черный фон)
             self.view = self.uiViewWhiteScreen
             uiViewWhiteScreen!.layer.opacity = 1
         })
         return true
+        
+       }
+        return false
     }
     
     deinit {

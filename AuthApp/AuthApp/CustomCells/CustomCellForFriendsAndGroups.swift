@@ -49,7 +49,7 @@ class CustomCellForFriendsAndGroups: UITableViewCell {
 
     }
     
-    var pressGestureRecognizer: UITapGestureRecognizer { //  recognizer длительного нажатия на cell
+    var pressGestureRecognizer: UITapGestureRecognizer { //  recognizer  нажатия на cell
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(onTap))
         return recognizer
     }

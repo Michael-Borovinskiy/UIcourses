@@ -47,7 +47,7 @@ class GroupsTableViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "customCellForTable", for: indexPath) as! CustomCellForFriendsAndGroups //MyGroupCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "customCellForTable", for: indexPath) as! CustomCellForFriendsAndGroups 
             let image = UIImage(named: groupData.group[indexPath.row].image)!
             let name = groupData.group[indexPath.row].name
         

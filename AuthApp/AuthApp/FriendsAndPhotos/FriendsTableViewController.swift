@@ -145,9 +145,9 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let destination = storyboard.instantiateViewController(identifier: "BlackPhotoSceneForImagesViewController") as! BlackPhotoSceneForImagesViewController
-        //let destination = storyboard.instantiateViewController(identifier: "ImagesViewController") as! ImagesViewController
-        destination.title = "Фото"
+    //    let destination = storyboard.instantiateViewController(identifier: "BlackPhotoSceneForImagesViewController") as! BlackPhotoSceneForImagesViewController
+        let destination = storyboard.instantiateViewController(identifier: "ImagesViewController") as! ImagesViewController
+        destination.title = "Галерея"
         
         let friend: User
         if searchResult.isEmpty {
@@ -231,12 +231,3 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
     
 }
 
-//extension FriendsTableViewController: UINavigationControllerDelegate {
-//    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        if operation == .push {
-//        return CustomPushAnimator()
-//        }
-//        return nil
-//    }
-//
-//}
