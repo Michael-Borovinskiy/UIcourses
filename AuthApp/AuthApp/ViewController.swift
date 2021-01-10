@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imgVk: UIImageView!
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var downMoveButton: UIButton!
     
     
     @IBAction func loginTxtField(_ sender: UITextField) {
@@ -46,6 +47,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapAction))
         self.view.addGestureRecognizer(tap)
+        self.downMoveButton.addTarget(self, action: #selector(downInViewAuth), for: .touchUpInside)
         self.imgVk.rotate()
         setWhiteScreenDefault()
         
@@ -53,6 +55,13 @@ class ViewController: UIViewController {
     
     @objc func tapAction() {
         view.endEditing(true)
+    }
+    
+    @objc func downInViewAuth() {
+        UIView.animate(withDuration: 0.3) {
+            self.centerVerticalFormContraint.constant = -self.uiViewAuth.frame.height/3
+            self.view.layoutIfNeeded()
+        }
     }
     
     @objc func keyboardWillShow(_ notification: Notification?) {
@@ -65,6 +74,7 @@ class ViewController: UIViewController {
             raiseFormView(to: keyboardHeight)
             UIView.animate(withDuration: 0.2, animations: {self.imgVk.layer.opacity = 0})
             }
+        self.downMoveButton.isHidden = false
         }
     
     @objc func keyboardWillHide(_ notification: Notification) {
@@ -76,6 +86,7 @@ class ViewController: UIViewController {
             self.view.layoutIfNeeded()
             self.imgVk.layer.opacity = 1
         }
+        self.downMoveButton.isHidden = true
     }
     
     func raiseFormView(to height: CGFloat) {
