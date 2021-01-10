@@ -284,24 +284,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HYa-U0-ueO">
-                                <rect key="frame" x="0.0" y="84" width="414" height="414"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pyB-nX-vQH">
+                                <rect key="frame" x="32" y="131" width="350" height="350"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="HYa-U0-ueO" secondAttribute="height" multiplier="1:1" id="5Sb-T6-dU2"/>
-                                    <constraint firstAttribute="width" constant="414" id="MVf-7q-WWX"/>
+                                    <constraint firstAttribute="width" secondItem="pyB-nX-vQH" secondAttribute="height" multiplier="1:1" id="imc-dK-gb5"/>
+                                    <constraint firstAttribute="width" constant="350" id="jIe-yN-Lhz"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c39-w4-coX"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="HYa-U0-ueO" firstAttribute="centerX" secondItem="kGL-Db-ZSb" secondAttribute="centerX" id="J9a-9R-H2i"/>
-                            <constraint firstItem="HYa-U0-ueO" firstAttribute="top" secondItem="c39-w4-coX" secondAttribute="top" constant="40" id="PGs-8A-AF9"/>
+                            <constraint firstItem="pyB-nX-vQH" firstAttribute="top" secondItem="c39-w4-coX" secondAttribute="top" constant="87" id="Suy-Fa-b8y"/>
+                            <constraint firstItem="pyB-nX-vQH" firstAttribute="centerX" secondItem="kGL-Db-ZSb" secondAttribute="centerX" id="jeH-uT-geo"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="centerConstraint" destination="J9a-9R-H2i" id="JGO-VR-x87"/>
-                        <outlet property="uiImageView" destination="HYa-U0-ueO" id="qdB-LI-l7a"/>
+                        <outlet property="centerConstraint" destination="jeH-uT-geo" id="Cqm-QU-gyl"/>
+                        <outlet property="uiImageView" destination="pyB-nX-vQH" id="snc-vR-kmE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5L-uJ-Yt0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

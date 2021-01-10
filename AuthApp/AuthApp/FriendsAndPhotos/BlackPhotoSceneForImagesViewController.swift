@@ -17,6 +17,7 @@ class BlackPhotoSceneForImagesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         uiImageView.translatesAutoresizingMaskIntoConstraints = false
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizer.Direction.right
@@ -96,6 +97,7 @@ class BlackPhotoSceneForImagesViewController: UIViewController {
              }
          }
     }
+    
      override func didReceiveMemoryWarning() {
          super.didReceiveMemoryWarning()
          // Dispose of any resources that can be recreated.
@@ -104,5 +106,5 @@ class BlackPhotoSceneForImagesViewController: UIViewController {
     
     
     
-
 }
+
