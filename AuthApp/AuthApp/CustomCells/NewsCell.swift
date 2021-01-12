@@ -9,6 +9,9 @@ import UIKit
 
 class NewsCell: UITableViewCell { // ToDo добавить в ячейку аватар и имя пользователя к каждой новости
 
+    let width = UIScreen.main.bounds.size.width
+    let height = UIScreen.main.bounds.size.height
+    let cgPoint = CGPoint(x: 0, y: 72)
     
     @IBOutlet weak var uiLabel: UILabel!
     @IBOutlet weak var uiImageView: UIImageView!
@@ -25,13 +28,13 @@ class NewsCell: UITableViewCell { // ToDo добавить в ячейку ав�
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        uiImageView.layer.cornerRadius = 3
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
+    
     
 }

@@ -55,7 +55,7 @@ class CustomCellForFriendsAndGroups: UITableViewCell {
     }
     
     
-    @objc func onTap () {        //  функция при длительном нажатии на cell
+    @objc func onTap () {        //  функция при нажатии на cell
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.4, options: [], animations: {
             UIView.animate(withDuration: 0.5, animations: {
                 self.uiView.transform = CGAffineTransform(scaleX: 0.75, y: 0.75);

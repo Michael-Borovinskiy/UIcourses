@@ -148,6 +148,12 @@ class ViewController: UIViewController {
         uiViewWhiteScreen!.bounds = self.view.bounds
         uiViewWhiteScreen!.layer.opacity = 0
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+        }
+    }
 }
 
 
