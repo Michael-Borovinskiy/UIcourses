@@ -285,7 +285,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pyB-nX-vQH">
-                                <rect key="frame" x="32" y="131" width="350" height="350"/>
+                                <rect key="frame" x="32" y="273" width="350" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pyB-nX-vQH" secondAttribute="height" multiplier="1:1" id="imc-dK-gb5"/>
                                     <constraint firstAttribute="width" constant="350" id="jIe-yN-Lhz"/>
@@ -295,7 +295,7 @@
                         <viewLayoutGuide key="safeArea" id="c39-w4-coX"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pyB-nX-vQH" firstAttribute="top" secondItem="c39-w4-coX" secondAttribute="top" constant="87" id="Suy-Fa-b8y"/>
+                            <constraint firstItem="pyB-nX-vQH" firstAttribute="centerY" secondItem="kGL-Db-ZSb" secondAttribute="centerY" id="CdV-g0-IS5"/>
                             <constraint firstItem="pyB-nX-vQH" firstAttribute="centerX" secondItem="kGL-Db-ZSb" secondAttribute="centerX" id="jeH-uT-geo"/>
                         </constraints>
                     </view>
@@ -316,7 +316,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5ci-JU-EaA">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5ci-JU-EaA">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zaE-7f-00w">

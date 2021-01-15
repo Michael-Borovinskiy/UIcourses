@@ -16,7 +16,12 @@ class ImageCell: UICollectionViewCell {
 
 
     
-    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var img: UIImageView! {
+        didSet{
+            self.img.layer.cornerRadius = 15
+            self.img.layer.masksToBounds = true
+        }
+    }
     
     @IBOutlet weak var btnLikes: UIButton!
     @IBOutlet weak var lblLikes: UILabel!
@@ -42,8 +47,8 @@ class ImageCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         btnLikes.addTarget(self, action: #selector(setLike), for: .touchUpInside)
-        self.layer .borderWidth = 2
-        self.layer.borderColor = UIColor.darkGray.cgColor
+        //self.layer .borderWidth = 2
+        //self.layer.borderColor = UIColor.darkGray.cgColor
     }
     
         @objc func setLike() {

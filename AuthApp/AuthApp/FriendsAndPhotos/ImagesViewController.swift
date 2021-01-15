@@ -10,7 +10,7 @@ import UIKit
 class ImagesViewController: UIViewController {
     
     let width = UIScreen.main.bounds.size.width
-    let height = UIScreen.main.bounds.size.height
+    
     var tapRecognizer:UITapGestureRecognizer {
         return UITapGestureRecognizer(target: self, action: #selector(toBlackPhotoScene))
     }
