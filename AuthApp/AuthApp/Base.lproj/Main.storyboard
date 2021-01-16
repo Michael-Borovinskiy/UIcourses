@@ -262,7 +262,9 @@
                             <constraint firstItem="1AY-aX-AIO" firstAttribute="trailing" secondItem="VS8-ol-nTV" secondAttribute="trailing" id="rK6-TO-VP8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Мои друзья" id="dzA-0h-Ice"/>
+                    <navigationItem key="navigationItem" title="Мои друзья" id="dzA-0h-Ice">
+                        <barButtonItem key="backBarButtonItem" title="Мои друзья" id="mUT-0a-5EG"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="round1" destination="WAl-nJ-PfC" id="XVr-tp-nTe"/>
                         <outlet property="round2" destination="W6K-CC-yut" id="ruB-qR-mYw"/>
@@ -395,6 +397,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Мои группы" id="2ak-fg-9MG">
+                        <barButtonItem key="backBarButtonItem" title="Мои группы" id="EX0-6N-0qt"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ira-8T-fvV">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>

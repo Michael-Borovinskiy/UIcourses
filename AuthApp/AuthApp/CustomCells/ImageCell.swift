@@ -47,6 +47,7 @@ class ImageCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         btnLikes.addTarget(self, action: #selector(setLike), for: .touchUpInside)
+        
         //self.layer .borderWidth = 2
         //self.layer.borderColor = UIColor.darkGray.cgColor
     }

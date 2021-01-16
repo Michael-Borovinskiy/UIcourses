@@ -27,6 +27,7 @@ class ImagesViewController: UIViewController {
         
         uiCollectionView.register(UINib(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "imgcell_fromXib")
         navigationItem.leftBarButtonItem?.action = #selector(backAction)
+        navigationItem.leftBarButtonItem?.title = "< друзья"
     }
     
     @objc func backAction(){
