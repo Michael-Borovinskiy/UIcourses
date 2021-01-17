@@ -13,8 +13,6 @@ class ImageCell: UICollectionViewCell {
     var indexCell: Int?
     var isLiked: Bool = false
     var counter: Int?
-
-
     
     @IBOutlet weak var img: UIImageView! {
         didSet{

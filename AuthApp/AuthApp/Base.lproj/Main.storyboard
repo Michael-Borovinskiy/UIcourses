@@ -321,7 +321,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5ci-JU-EaA">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zaE-7f-00w">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zaE-7f-00w">
                                     <size key="itemSize" width="162" height="189"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -494,7 +494,9 @@
                             <constraint firstItem="QeW-Dj-1WP" firstAttribute="leading" secondItem="cdV-g8-HzI" secondAttribute="leading" id="p9m-fD-5TS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Все группы" id="7bj-z6-XCQ"/>
+                    <navigationItem key="navigationItem" title="Все группы" id="7bj-z6-XCQ">
+                        <barButtonItem key="backBarButtonItem" title="Мои группы" id="4c2-du-aQm"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="uiTableView" destination="QeW-Dj-1WP" id="wOC-mz-QGa"/>
                     </connections>
