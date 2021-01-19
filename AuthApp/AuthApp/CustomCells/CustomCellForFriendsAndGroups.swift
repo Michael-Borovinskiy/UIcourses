@@ -54,6 +54,7 @@ class CustomCellForFriendsAndGroups: UITableViewCell {
         return recognizer
     }
     
+    // MARK: Animation
     
     @objc func onTap () {        //  функция при нажатии на cell
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.4, options: [], animations: {

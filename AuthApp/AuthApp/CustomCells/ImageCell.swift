@@ -46,9 +46,9 @@ class ImageCell: UICollectionViewCell {
         super.awakeFromNib()
         btnLikes.addTarget(self, action: #selector(setLike), for: .touchUpInside)
         
-        //self.layer .borderWidth = 2
-        //self.layer.borderColor = UIColor.darkGray.cgColor
     }
+    
+    // MARK: Actions
     
         @objc func setLike() {
             if !isLiked  {
@@ -72,6 +72,8 @@ class ImageCell: UICollectionViewCell {
                 isLiked.toggle()
             }
         }
+    
+    // MARK: Animation
     
     func animateLike () {
         let animationsGroup = CAAnimationGroup()

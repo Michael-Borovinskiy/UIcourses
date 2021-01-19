@@ -15,7 +15,6 @@ class AuthScreen: UIViewController {
     let pswdTexr: String = "root"
     var uiViewWhiteScreen: UIView? = UIView()
     
-
     
     @IBOutlet weak var uiViewAuth: UIView!
     @IBOutlet weak var loginLbl: UILabel!
@@ -64,6 +63,8 @@ class AuthScreen: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+    
+    // MARK: Keyboard
     
     @objc func keyboardWillShow(_ notification: Notification?) {
         
@@ -149,6 +150,8 @@ class AuthScreen: UIViewController {
         uiViewWhiteScreen!.layer.opacity = 0
     }
     
+    // MARK: Portrait Orientation
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         get {
             return .portrait
@@ -156,6 +159,7 @@ class AuthScreen: UIViewController {
     }
 }
 
+    // MARK: Animation
 
 extension UIView{ // добавление функции вращения логотипа
     func rotate() {

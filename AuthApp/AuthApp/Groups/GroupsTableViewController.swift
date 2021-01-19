@@ -42,6 +42,8 @@ class GroupsTableViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
+    // MARK: DataSource
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (groupData.group.count)
     }

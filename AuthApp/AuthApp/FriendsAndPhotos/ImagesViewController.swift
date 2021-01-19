@@ -9,7 +9,7 @@ import UIKit
 
 class ImagesViewController: UIViewController, UIGestureRecognizerDelegate {
     
-    let width = UIScreen.main.bounds.size.width
+    let width = UIScreen.main.bounds.size.width // ширина экрана для FlowLayout
     
     @IBOutlet weak var uiCollectionView: UICollectionView!
     
@@ -46,6 +46,8 @@ class ImagesViewController: UIViewController, UIGestureRecognizerDelegate {
 
 extension ImagesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
+    // MARK: DataSource
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (user?.photos.count)!
     }
@@ -65,6 +67,8 @@ extension ImagesViewController: UICollectionViewDataSource, UICollectionViewDele
 }
 
 extension ImagesViewController : UICollectionViewDelegateFlowLayout {
+    
+    // MARK: FlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout

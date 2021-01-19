@@ -16,14 +16,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="319" height="506"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ш" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDr-JI-asx">
-                        <rect key="frame" x="10" y="61" width="299" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ш" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDr-JI-asx">
+                        <rect key="frame" x="10" y="68" width="299" height="17"/>
+                        <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Zl-O4-p55">
-                        <rect key="frame" x="0.0" y="99" width="319" height="319"/>
+                        <rect key="frame" x="0.0" y="102.5" width="319" height="319"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="0Zl-O4-p55" secondAttribute="height" multiplier="1:1" id="EPI-9d-eKx"/>
                             <constraint firstAttribute="height" constant="319" id="Qrv-kG-4ym"/>
@@ -37,14 +37,14 @@
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgl-OJ-ffJ">
-                        <rect key="frame" x="107" y="461" width="31" height="22"/>
+                        <rect key="frame" x="107" y="464.5" width="31" height="18.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <state key="normal" title="0" image="arrowshape.turn.up.right" catalog="system">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob3-EP-uca">
-                        <rect key="frame" x="246" y="463" width="60" height="18"/>
+                        <rect key="frame" x="246" y="466.5" width="60" height="14.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="40a-iX-ZlW"/>
                         </constraints>
@@ -94,7 +94,7 @@
                     <constraint firstAttribute="bottom" secondItem="q5X-Q8-3gN" secondAttribute="bottom" constant="24" id="7ft-5H-KyK"/>
                     <constraint firstItem="Ob3-EP-uca" firstAttribute="top" secondItem="0Zl-O4-p55" secondAttribute="bottom" constant="45" id="A4Q-gf-olj"/>
                     <constraint firstAttribute="trailing" secondItem="2YF-uz-rlY" secondAttribute="trailing" id="C05-Hu-qEw"/>
-                    <constraint firstItem="vDr-JI-asx" firstAttribute="top" secondItem="2YF-uz-rlY" secondAttribute="bottom" constant="8" id="PJO-KB-pvZ"/>
+                    <constraint firstItem="vDr-JI-asx" firstAttribute="top" secondItem="2YF-uz-rlY" secondAttribute="bottom" constant="15" id="PJO-KB-pvZ"/>
                     <constraint firstAttribute="bottom" secondItem="Ob3-EP-uca" secondAttribute="bottom" constant="25" id="T15-bI-DdC"/>
                     <constraint firstAttribute="trailing" secondItem="vDr-JI-asx" secondAttribute="trailing" constant="10" id="TZ4-5T-jOH"/>
                     <constraint firstItem="bgl-OJ-ffJ" firstAttribute="top" secondItem="0Zl-O4-p55" secondAttribute="bottom" constant="43" id="Yr8-rY-m5G"/>

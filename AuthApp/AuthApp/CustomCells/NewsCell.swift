@@ -7,12 +7,8 @@
 
 import UIKit
 
-class NewsCell: UITableViewCell { // ToDo добавить в ячейку аватар и имя пользователя к каждой новости
+class NewsCell: UITableViewCell { 
 
-    let width = UIScreen.main.bounds.size.width
-    let height = UIScreen.main.bounds.size.height
-    let cgPoint = CGPoint(x: 0, y: 72)
-    
     @IBOutlet weak var uiHeader: UIView!
     @IBOutlet weak var uiImageHeader: UIImageView!{
         didSet{

@@ -8,11 +8,10 @@
 import UIKit
 
 class NewsViewController: UIViewController, UITableViewDataSource ,UITableViewDelegate {
-
-    var newsData: News = News()
-
-    @IBOutlet weak var uiTableView: UITableView!
     
+    var newsData: News = News()
+    
+    @IBOutlet weak var uiTableView: UITableView!
     
     
     override func viewDidLoad() {
@@ -22,6 +21,8 @@ class NewsViewController: UIViewController, UITableViewDataSource ,UITableViewDe
         
         uiTableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "news")
     }
+    
+    // MARK: DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsData.news.count
@@ -33,10 +34,8 @@ class NewsViewController: UIViewController, UITableViewDataSource ,UITableViewDe
         cell.setData(newsData.news[indexPath.row].text,               newsData.news[indexPath.row].photo,
                      newsData.news[indexPath.row].user.image,
                      "\(newsData.news[indexPath.row].user.surname) \(newsData.news[indexPath.row].user.name)"
-                     )
-        
+        )
         return cell
     }
     
-
 }

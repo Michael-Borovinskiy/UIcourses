@@ -22,6 +22,8 @@ class AllGroupsTableViewController: UIViewController, UITableViewDataSource ,UIT
         uiTableView.register(UINib(nibName: "CustomCellForFriendsAndGroups", bundle: nil), forCellReuseIdentifier: "customCellForTable")
     }
     
+    // MARK: DataSource
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (groupData.group2.count)
     }

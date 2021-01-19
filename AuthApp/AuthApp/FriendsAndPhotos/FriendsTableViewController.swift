@@ -26,6 +26,9 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         return dictLetterUser
     }
     var searchController: UISearchController!
+    
+    // MARK: Animation components
+    
     @IBOutlet weak var uiViewSearchAnimCell: UIView!
     
     @IBOutlet weak var round1: UIView!{
@@ -44,6 +47,8 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         }
     }
     @IBOutlet weak var uiSearchAnimationCell: UIView!
+    
+    // MARK: SearchController and func
     
     func updateSearchResults(for searchController: UISearchController) {
         if let searchtext = searchController.searchBar.text {
@@ -65,6 +70,18 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         
     }
     
+    func setSearchController() {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.barTintColor = .white
+        searchController.searchBar.placeholder = "Поиск по ФИО"
+        searchController.searchBar.searchTextField.backgroundColor = .white
+        searchController.searchBar.setValue("Отмена", forKey: "cancelButtonText")
+        uiTableView.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+       
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         uiTableView.delegate = self
@@ -74,6 +91,8 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         setSearchController()
         setConstraintsForAnimatedRounds ()
     }
+    
+    // MARK: DataSource
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         if searchController.isActive {
@@ -145,7 +164,6 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //    let destination = storyboard.instantiateViewController(identifier: "BlackPhotoSceneForImagesViewController") as! BlackPhotoSceneForImagesViewController
         let destination = storyboard.instantiateViewController(identifier: "ImagesViewController") as! ImagesViewController
         destination.title = "Галерея"
         
@@ -171,6 +189,8 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         
     }
     
+    // MARK: Animation
+    
     func animateSearchPoints() {
         UIView.animate(withDuration: 0.8, delay: 0.4, options: .allowAnimatedContent, animations: {self.round1.alpha = 1}, completion: {_ in UIView.animate(withDuration: 0.2, animations: {self.round1.alpha = 0})})
         UIView.animate(withDuration: 0.8, delay: 0.6, options: .allowAnimatedContent, animations:
@@ -181,17 +201,7 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
 
     }
     
-    func setSearchController() {
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.barTintColor = .white
-        searchController.searchBar.placeholder = "Поиск по ФИО"
-        searchController.searchBar.searchTextField.backgroundColor = .white
-        searchController.searchBar.setValue("Отмена", forKey: "cancelButtonText")
-        uiTableView.tableHeaderView = searchController.searchBar
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-       
-    }
+    // MARK: Constraints
     
     func setConstraintsForAnimatedRounds () {   // установлены констрейнты для размещения анимированных кругов по центру экрана относительно ячейки superview
         
@@ -220,13 +230,6 @@ class FriendsTableViewController: UIViewController, UITableViewDataSource ,UITab
         
     }
     
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard segue.identifier == "toCollection" else { return }
-//        guard let destination = segue.destination as? ImagesViewController else { return }
-//        destination.imgFriends = userData.user[uiTableView.indexPathForSelectedRow!.row].photos
-//    }
-//
     
     
 }
