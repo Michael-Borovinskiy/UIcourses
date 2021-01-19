@@ -30,7 +30,10 @@ class NewsViewController: UIViewController, UITableViewDataSource ,UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "news", for: indexPath) as! NewsCell
-        cell.setData(newsData.news[indexPath.row].text, newsData.news[indexPath.row].photo)
+        cell.setData(newsData.news[indexPath.row].text,               newsData.news[indexPath.row].photo,
+                     newsData.news[indexPath.row].user.image,
+                     "\(newsData.news[indexPath.row].user.surname) \(newsData.news[indexPath.row].user.name)"
+                     )
         
         return cell
     }
