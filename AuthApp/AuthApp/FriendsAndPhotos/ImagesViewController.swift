@@ -7,27 +7,23 @@
 
 import UIKit
 
-class ImagesViewController: UIViewController {
+class ImagesViewController: UIViewController, UIGestureRecognizerDelegate {
     
     let width = UIScreen.main.bounds.size.width
-    
-    var tapRecognizer:UITapGestureRecognizer {
-        return UITapGestureRecognizer(target: self, action: #selector(toBlackPhotoScene))
-    }
     
     @IBOutlet weak var uiCollectionView: UICollectionView!
     
     var user: User?
     var userNum: IndexPath?
+    var startImageNum: Int?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.uiCollectionView.dataSource = self
         self.uiCollectionView.delegate = self
-        
         uiCollectionView.register(UINib(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "imgcell_fromXib")
         navigationItem.leftBarButtonItem?.action = #selector(backAction)
-        navigationItem.leftBarButtonItem?.title = "< друзья"
     }
     
     @objc func backAction(){
@@ -37,10 +33,11 @@ class ImagesViewController: UIViewController {
         previousViewController.userData.user[(user?.id)!] = user!
     }
     
-    @objc func toBlackPhotoScene() {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destination = storyboard.instantiateViewController(identifier: "BlackPhotoSceneForImagesViewController") as! BlackPhotoSceneForImagesViewController
         destination.title = "Фото"
+        destination.startImageNum = indexPath.row
         destination.user = user
         navigationController?.pushViewController(destination, animated: true)
     }
@@ -61,7 +58,6 @@ extension ImagesViewController: UICollectionViewDataSource, UICollectionViewDele
         cell.setLikes(countOfLikes: (user?.photoLikes[indexPath.row])!)
         cell.setIsLiked(bool: (user?.isLiked[indexPath.row])!)
         cell.img.isUserInteractionEnabled = true
-        cell.img.addGestureRecognizer(tapRecognizer)
         return cell
     }
     

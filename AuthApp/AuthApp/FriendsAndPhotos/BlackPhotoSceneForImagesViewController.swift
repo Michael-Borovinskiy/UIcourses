@@ -12,6 +12,8 @@ class BlackPhotoSceneForImagesViewController: UIViewController {
     var user: User?
     var imagewidth: CGFloat?
     var currentImageNum = 0
+    var startImageNum: Int?  // переменная для передачи стартового индекса фото
+    
     @IBOutlet weak var uiImageView: UIImageView!
     @IBOutlet weak var centerConstraint: NSLayoutConstraint!
     
@@ -30,6 +32,7 @@ class BlackPhotoSceneForImagesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        currentImageNum = startImageNum!
         self.uiImageView.image = (self.user?.photos[self.currentImageNum])
     }
     

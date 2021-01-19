@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class AuthScreen: UIViewController {
     
     
     let loginText: String = "root"
