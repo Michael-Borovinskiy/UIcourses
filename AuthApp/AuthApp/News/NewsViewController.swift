@@ -20,6 +20,8 @@ class NewsViewController: UIViewController, UITableViewDataSource ,UITableViewDe
         uiTableView.dataSource = self
         
         uiTableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "news")
+        
+
     }
     
     // MARK: DataSource
@@ -39,6 +41,7 @@ class NewsViewController: UIViewController, UITableViewDataSource ,UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "news", for: indexPath) as! NewsCell
         
         cell.id = newsData.news[indexPath.row].id
+        cell.indexPathRow = indexPath.row
         
         cell.setData(text: newsData.news[indexPath.row].text,
                      img: newsData.news[indexPath.row].photo,
@@ -53,8 +56,30 @@ class NewsViewController: UIViewController, UITableViewDataSource ,UITableViewDe
         cell.newsData = newsData
         cell.setIsLiked(bool: newsData.news[indexPath.row].isLiked)
         
-
+        let tapGesture = CustomTapGesture (target: self, action: #selector(tap))
+        tapGesture.index = indexPath.row
+        cell.commentLike.addGestureRecognizer(tapGesture)
+        
         return cell
     }
     
+    @objc func tap(_ sender: CustomTapGesture) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destination = storyboard.instantiateViewController(identifier: "CommentsViewController") as! CommentsViewController
+        destination.title = "Комментарии"
+        destination.imageOfNews = UIImage(named: newsData.news[sender.index!].photo)
+        destination.textOfNews = newsData.news[sender.index!].text
+        destination.newsComments = newsData.news[sender.index!].comments
+        present(destination, animated: true, completion: nil)
+    }
+    
 }
+
+class CustomTapGesture: UITapGestureRecognizer {
+    var index: Int?
+}
+
+
+
+

@@ -82,11 +82,11 @@ class News  {
                                 photoLikes: 15,
                                 newsLikes: 5,
                                 comments: [Comment( id: 2,
-                                                    user: User(id: 2, image: "photo11", name: "Елена",surname: "Смирнова", photos: [UIImage(named: "face3")!, UIImage(named: "face3pic1")!], photoLikes: [6,4], isLiked:[false,false]),
+                                                    user: User(id: 6,image: "oblozhka-6", name: "Ангелина", surname: "Ратова", photos: [UIImage(named: "oblozhka-6")!], photoLikes: [100],isLiked: [false]),
                                                     text: "Где это находится????", imgInside: UIImage(systemName:"heart.fill")!
                                                         ),
                                            Comment( id: 2,
-                                                    user: User(id: 2, image: "photo11", name: "Елена",surname: "Смирнова", photos: [UIImage(named: "face3")!, UIImage(named: "face3pic1")!], photoLikes: [6,4], isLiked:[false,false]),
+                                                    user: User(id: 7,image: "blondinka", name: "Света", surname: "Ильина", photos: [UIImage(named: "blondinka")!, UIImage(named: "oblozhka-6")!], photoLikes: [1,14],isLiked: [false, false]),
                                                     text: "Догадайся)))", imgInside: UIImage(systemName:"heart.fill")!
                                                         ),
                                 ],
@@ -101,11 +101,11 @@ class News  {
                                 photoLikes: 15,
                                 newsLikes: 61,
                                 comments: [Comment( id: 3,
-                                                    user: User(id: 2, image: "photo11", name: "Елена",surname: "Смирнова", photos: [UIImage(named: "face3")!, UIImage(named: "face3pic1")!], photoLikes: [6,4], isLiked:[false,false]),
+                                                    user: User(id: 8,image: "er3", name: "Ирина", surname: "Ганеева", photos: [UIImage(named: "er1")!, UIImage(named: "er2")!,UIImage(named: "er3")!], photoLikes: [1,14,5], isLiked: [false,false,false]),
                                                     text: "super goooood", imgInside: UIImage(systemName:"heart.fill")!
                                                         ),
                                            Comment( id: 4,
-                                                    user: User(id: 2, image: "photo11", name: "Елена",surname: "Смирнова", photos: [UIImage(named: "face3")!, UIImage(named: "face3pic1")!], photoLikes: [6,4], isLiked:[false,false]),
+                                                    user: User(id: 3,image: "sidyaschiy-muzhchina", name: "Ваня", surname: "Коломиец", photos: [UIImage(named: "sidyaschiy-muzhchina")!], photoLikes: [2], isLiked: [false]),
                                                     text: "=)", imgInside: UIImage(systemName:"heart.fill")!
                                                         )
                                 ],
@@ -120,7 +120,7 @@ class News  {
                                 photoLikes: 15,
                                 newsLikes: 3,
                                 comments: [Comment( id: 1,
-                                                    user: User(id: 2, image: "photo11", name: "Елена",surname: "Смирнова", photos: [UIImage(named: "face3")!, UIImage(named: "face3pic1")!], photoLikes: [6,4], isLiked:[false,false]),
+                                                    user: User(id: 1, image: "d_1400x1100", name: "Александр", surname: "Петров", photos: [ UIImage(named: "d_1400x1100")!, UIImage(named: "garda")!,UIImage(named: "sunsystem")!], photoLikes: [0,14,5], isLiked: [false,false,false] ),
                                                         text: "Не верю)",
                                                         imgInside: UIImage(systemName:"heart.fill")!)],
                                 forwardMessages: 2,

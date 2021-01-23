@@ -16,6 +16,7 @@ class NewsCell: UITableViewCell {
     var counterLikes: Int?
     var isLiked: Bool = false
     var id: Int?
+    var indexPathRow: Int?
 
     
     
@@ -55,6 +56,7 @@ class NewsCell: UITableViewCell {
         super.awakeFromNib()
         uiImageView.layer.cornerRadius = 3
         buttonLike.addTarget(self, action: #selector(setLike), for: .touchUpInside)
+    //    commentLike.addTarget(self, action: #selector(toCommentScreen), for: .touchUpInside)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -76,7 +78,7 @@ class NewsCell: UITableViewCell {
         }
     }
     
-        @objc func setLike() {
+    @objc func setLike() {
             if !isLiked  {
                 animateLike()
                 counterLikes = counterLikes! + 1
@@ -99,6 +101,17 @@ class NewsCell: UITableViewCell {
                 isLiked.toggle()
             }
         }
+    
+//    @objc func toCommentScreen() {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let destination = storyboard.instantiateViewController(identifier: "CommentsViewController") as! CommentsViewController
+//        destination.title = "Комментарии"
+//        destination.imageOfNews = UIImage(named: newsData!.news[indexPathRow!].photo)
+//        destination.textOfNews = newsData!.news[indexPathRow!].text
+//        destination.newsComments = newsData!.news[indexPathRow!].comments
+//        present(destination, animated: true, completion: nil)
+//    }
+    
     
     override func prepareForReuse() {
         super.prepareForReuse()
