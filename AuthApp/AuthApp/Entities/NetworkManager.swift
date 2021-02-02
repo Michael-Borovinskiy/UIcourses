@@ -27,11 +27,22 @@ class NetworkManager {
     }
     
     
-    func getRes (stringURL string: String) {
+    func getRes (stringURL string: String) //, completionHandler: @escaping ((Any) -> ()))
+    {
         
         let session = URLSession.shared
 
         let task = session.dataTask(with: URL(string: string)!) { (data, response, error) in
+            
+//            let decoder = JSONDecoder()
+//
+//            do{
+//                let words = try decoder.decode([String].self, from: data!)//}
+//                completionHandler(words)
+//            }catch {
+//                print(error.localizedDescription)
+//            }
+        
         let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
             print(json!)
         }
@@ -39,15 +50,5 @@ class NetworkManager {
         task.resume()
     }
     
-    
-//    func getResWithSearch (stringURL string: String) {
-//
-//        let session = URLSession.shared
-//
-//        let task = session.dataTask(with: URL(string: string)!) { (data, response, error) in
-//            print(data!)
-//        }
-//        task.resume()
-//    }
 
 }

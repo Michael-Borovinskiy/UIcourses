@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class AuthWKScreen: UIViewController {
+class AuthWKScreen: UIViewController {  // тестовый экран вывода данных VK API
     
     @IBOutlet weak var viewWK: WKWebView!{
         didSet{
@@ -21,6 +21,7 @@ class AuthWKScreen: UIViewController {
     @IBOutlet weak var uiButtonPhotos: UIButton!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var search: UIButton!
+    @IBOutlet weak var textLabel: UILabel!
     
     
     let networkManager: NetworkManager = NetworkManager()
@@ -37,15 +38,18 @@ class AuthWKScreen: UIViewController {
     
     @objc func getFriends() {
         networkManager.getRes(stringURL: "https://api.vk.com/method/friends.get?v=5.68&access_token=\(Session.instance.token)")
-    }
+        }
+        
+    
     
     @objc func getGroups() {
         networkManager.getRes(stringURL: "https://api.vk.com/method/groups.get?v=5.68&access_token=\(Session.instance.token)")
-    }
+        }
+    
     
     @objc func getPhotos() {
         networkManager.getRes(stringURL: "https://api.vk.com/method/photos.getAll?v=5.68&access_token=\(Session.instance.token)")
-    }
+        }
     
     @objc func getGroupsWithSearch() {
         let word = self.textField.text
