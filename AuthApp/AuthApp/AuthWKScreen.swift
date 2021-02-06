@@ -37,7 +37,7 @@ class AuthWKScreen: UIViewController {  // тестовый экран выво�
     }
     
     @objc func getFriends() {
-        networkManager.getRes(stringURL: "https://api.vk.com/method/friends.get?v=5.68&access_token=\(Session.instance.token)")
+        networkManager.getResFriends(stringURL: "https://api.vk.com/method/friends.get?fields=last_name&v=5.68&access_token=\(Session.instance.token)")
         }
         
     

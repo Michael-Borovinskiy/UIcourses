@@ -9,7 +9,8 @@ import Foundation
 
 class NetworkManager {
     
-    func getStartRequest () -> URLRequest {
+    
+    func getStartRequest () -> URLRequest { // загрузка страницы авторизации
         
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
@@ -22,33 +23,51 @@ class NetworkManager {
             URLQueryItem(name: "scope", value: "262150"),
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "v", value: "5.68")
-            ]
+        ]
         return URLRequest(url: urlComponents.url!)
     }
     
-    
-    func getRes (stringURL string: String) //, completionHandler: @escaping ((Any) -> ()))
+    func getRes (stringURL string: String) // вывод сырых данных групп, фото
     {
         
         let session = URLSession.shared
-
-        let task = session.dataTask(with: URL(string: string)!) { (data, response, error) in
-            
-//            let decoder = JSONDecoder()
-//
-//            do{
-//                let words = try decoder.decode([String].self, from: data!)//}
-//                completionHandler(words)
-//            }catch {
-//                print(error.localizedDescription)
-//            }
         
-        let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+        let task =  session.dataTask(with: URL(string: string)!) { (data, response, error) in
+            
+            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
             print(json!)
         }
-
         task.resume()
+        
     }
     
-
+    
+    
+    func getResFriends (stringURL string: String) //  вывод "имя фамилия" всех друзей
+    {
+        
+        let session = URLSession.shared
+        
+        session.dataTask(with: URL(string: string)!) { (data, response, error) in
+            
+            
+            let json = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
+            
+            
+            let array = json as! NSDictionary
+            let response = array["response"] as! Dictionary<String,Any>
+            let items = response["items"] as! NSMutableArray
+            
+            for item in items {
+                let dict = item as! Dictionary<String,Any>
+                let lastName = dict["last_name"] as! String
+                let firstName = dict["first_name"] as! String
+                print(firstName,lastName)
+                
+            }
+        }.resume()
+        
+        
+    }
+    
 }
