@@ -43,17 +43,19 @@ class AuthWKScreen: UIViewController {  // тестовый экран выво�
     
     
     @objc func getGroups() {
-        networkManager.getRes(stringURL: "https://api.vk.com/method/groups.get?v=5.68&access_token=\(Session.instance.token)")
+        networkManager.getResGroups(stringURL: "https://api.vk.com/method/groups.get?extended=1&count=200&v=5.68&access_token=\(Session.instance.token)")
         }
     
     
     @objc func getPhotos() {
-        networkManager.getRes(stringURL: "https://api.vk.com/method/photos.getAll?v=5.68&access_token=\(Session.instance.token)")
+        networkManager.getResPhotos(stringURL: "https://api.vk.com/method/photos.getAll?extended=1&count=200&v=5.68&access_token=\(Session.instance.token)")
         }
     
     @objc func getGroupsWithSearch() {
-        let word = self.textField.text
-        networkManager.getRes(stringURL: "https://api.vk.com/method/groups.search?q=\(String(describing: word!))&v=5.68&access_token=\(Session.instance.token)")
+        if self.textField.text != "" {
+        guard let word = self.textField.text else {return}
+        networkManager.getResGroups(stringURL: "https://api.vk.com/method/groups.search?q=\(String(describing: word))&count=200&v=5.68&access_token=\(Session.instance.token)")
+        }
     }
     
     
