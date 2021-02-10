@@ -122,6 +122,7 @@ class AuthScreen: UIViewController {
 //            loginTxtFieldArea.text = ""
 //            pswdTxtFieldArea.text = ""
        //}else{
+        Session.instance.setUserData(userIdStr: 1, tokenStr: "1ygeSeddwgy:Cw34t4uhfsas:5hGDDkfhwg")
         UIView.animate(withDuration: 0.2, animations: { [self] in  //  cкрытие экрана авторизации для кастомного перехода между экранами (черный фон)
             self.view = self.uiViewWhiteScreen
             uiViewWhiteScreen!.layer.opacity = 1
