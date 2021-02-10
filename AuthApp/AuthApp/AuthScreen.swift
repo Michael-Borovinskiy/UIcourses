@@ -8,13 +8,13 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class AuthScreen: UIViewController {
     
     
     let loginText: String = "root"
     let pswdTexr: String = "root"
+    var uiViewWhiteScreen: UIView? = UIView()
     
-
     
     @IBOutlet weak var uiViewAuth: UIView!
     @IBOutlet weak var loginLbl: UILabel!
@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imgVk: UIImageView!
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var downMoveButton: UIButton!
     
     
     @IBAction func loginTxtField(_ sender: UITextField) {
@@ -45,12 +46,25 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapAction))
         self.view.addGestureRecognizer(tap)
+        self.downMoveButton.addTarget(self, action: #selector(downInViewAuth), for: .touchUpInside)
+        self.cancelButton.addTarget(self, action: #selector(clearTextFields), for: .touchUpInside)
         self.imgVk.rotate()
+        setWhiteScreenDefault()
+        
     }
     
     @objc func tapAction() {
         view.endEditing(true)
     }
+    
+    @objc func downInViewAuth() {
+        UIView.animate(withDuration: 0.3) {
+            self.centerVerticalFormContraint.constant = -self.uiViewAuth.frame.height/3
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    // MARK: Keyboard
     
     @objc func keyboardWillShow(_ notification: Notification?) {
         
@@ -60,7 +74,9 @@ class ViewController: UIViewController {
             // Из объекта CGRect получаем высоту клавиатуры
             let keyboardHeight = keyboardRectangle.height
             raiseFormView(to: keyboardHeight)
+            UIView.animate(withDuration: 0.2, animations: {self.imgVk.layer.opacity = 0})
             }
+        self.downMoveButton.isHidden = false
         }
     
     @objc func keyboardWillHide(_ notification: Notification) {
@@ -70,7 +86,9 @@ class ViewController: UIViewController {
             self.centerVerticalFormContraint.constant = 0
             // Нужно вызвать, чтобы анимация заработала (только для анимирования contraint'ов)
             self.view.layoutIfNeeded()
+            self.imgVk.layer.opacity = 1
         }
+        self.downMoveButton.isHidden = true
     }
     
     func raiseFormView(to height: CGFloat) {
@@ -87,8 +105,13 @@ class ViewController: UIViewController {
         return loginTxtFieldArea.text == loginText && pswdTxtFieldArea.text == pswdTexr
     }
     
+    @objc func clearTextFields () {
+        self.loginTxtFieldArea.text = ""
+        self.pswdTxtFieldArea.text = ""
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-//        if !isApproved () {           //закомментировано для быстрого доступа при проверке ДЗ
+//       if !isApproved () {           //закомментировано для быстрого доступа при проверке ДЗ
 //            let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
 //            // Создаем кнопку для UIAlertController
 //            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -98,11 +121,15 @@ class ViewController: UIViewController {
 //            present(alert, animated: true, completion: nil)
 //            loginTxtFieldArea.text = ""
 //            pswdTxtFieldArea.text = ""
-//        }
-        UIView.animate(withDuration: 0.15, animations: {  //  cкрытие экрана авторизации для кастомного перехода между экранами (черный фон)
-                        self.view.isHidden = true
+       //}else{
+        UIView.animate(withDuration: 0.2, animations: { [self] in  //  cкрытие экрана авторизации для кастомного перехода между экранами (черный фон)
+            self.view = self.uiViewWhiteScreen
+            uiViewWhiteScreen!.layer.opacity = 1
         })
         return true
+
+//       }
+//        return false
     }
     
     deinit {
@@ -115,8 +142,24 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: self.view.window)
     }
     
+    
+    func setWhiteScreenDefault() {
+        uiViewWhiteScreen = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width,height: view.frame.height))
+        uiViewWhiteScreen!.backgroundColor = .white
+        uiViewWhiteScreen!.bounds = self.view.bounds
+        uiViewWhiteScreen!.layer.opacity = 0
+    }
+    
+    // MARK: Portrait Orientation
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+        }
+    }
 }
 
+    // MARK: Animation
 
 extension UIView{ // добавление функции вращения логотипа
     func rotate() {

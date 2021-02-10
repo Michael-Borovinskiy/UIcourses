@@ -42,12 +42,14 @@ class GroupsTableViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
+    // MARK: DataSource
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (groupData.group.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "customCellForTable", for: indexPath) as! CustomCellForFriendsAndGroups //MyGroupCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "customCellForTable", for: indexPath) as! CustomCellForFriendsAndGroups 
             let image = UIImage(named: groupData.group[indexPath.row].image)!
             let name = groupData.group[indexPath.row].name
         
@@ -70,7 +72,9 @@ class GroupsTableViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
-    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Удалить"
+    }
     
     
     

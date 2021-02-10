@@ -45,7 +45,7 @@ final class CustomPopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                                                        animations: {
                                                            let rot2 = CGAffineTransform(rotationAngle: CGFloat.pi/2)
                                                         let translation = CGAffineTransform(translationX: containerViewFrame.width, y: containerViewFrame.height)
-                                                           //let scale = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                                            
                                                         destination.view.transform = translation.concatenating(rot2)
                                                         
                                     })

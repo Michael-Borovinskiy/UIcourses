@@ -9,10 +9,17 @@ import UIKit
 
 class ImageCell: UICollectionViewCell {
     
+    var user: User?
+    var indexCell: Int?
     var isLiked: Bool = false
-    var countOfLikes: Int?
+    var counter: Int?
     
-    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var img: UIImageView! {
+        didSet{
+            self.img.layer.cornerRadius = 15
+            self.img.layer.masksToBounds = true
+        }
+    }
     
     @IBOutlet weak var btnLikes: UIButton!
     @IBOutlet weak var lblLikes: UILabel!
@@ -24,38 +31,49 @@ class ImageCell: UICollectionViewCell {
     
     func setLikes (countOfLikes cnt: Int) {
         self.lblLikes.text = "\(cnt)"
-        countOfLikes = cnt
+        counter = cnt
     }
     
+    func setIsLiked (bool isLiked: Bool) {
+        self.isLiked = isLiked
+        if isLiked {
+            lblLikes.textColor = .green
+            btnLikes.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         btnLikes.addTarget(self, action: #selector(setLike), for: .touchUpInside)
-        //self.clipsToBounds = true
-        //self.contentMode = .scaleAspectFit
-        //self.img.clipsToBounds = true
-        //self.img.contentMode = .scaleAspectFit
-        //self.img.frame
-        self.layer .borderWidth = 2
-        self.layer.borderColor = UIColor.darkGray.cgColor
         
     }
     
+    // MARK: Actions
+    
         @objc func setLike() {
-            if !isLiked {
+            if !isLiked  {
                 animateLike()
-                lblLikes.text = "\(countOfLikes! + 1)"
+                counter = counter! + 1
+                lblLikes.text = "\(counter!)"
+                user?.photoLikes[indexCell!] = counter!
+                user?.isLiked[indexCell!].toggle()
                 lblLikes.textColor = .green
                 btnLikes.setImage(UIImage(systemName: "heart.fill"), for: .normal)
                 isLiked.toggle()
-            } else{
+            }
+            else  {
                 animateLikeBack()
-                lblLikes.text = "\(countOfLikes!)"
+                counter = counter! - 1
+                lblLikes.text = "\(counter!)"
+                user?.photoLikes[indexCell!] = counter!
+                user?.isLiked[indexCell!].toggle()
                 lblLikes.textColor = .systemPurple
                 btnLikes.setImage(UIImage(systemName: "heart"), for: .normal)
                 isLiked.toggle()
             }
         }
+    
+    // MARK: Animation
     
     func animateLike () {
         let animationsGroup = CAAnimationGroup()
