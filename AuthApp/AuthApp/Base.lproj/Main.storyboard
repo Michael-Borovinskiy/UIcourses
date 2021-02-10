@@ -192,46 +192,45 @@
                                 <rect key="frame" x="20" y="86" width="374" height="30"/>
                                 <state key="normal" title="Поиск групп"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLY-DK-FFB">
-                                <rect key="frame" x="10" y="167" width="394" height="512"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" systemColor="labelColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Zx-CE-M0g" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="142" y="124" width="130" height="130"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="512" id="Bdx-mY-BNB"/>
+                                    <constraint firstAttribute="width" secondItem="1Zx-CE-M0g" secondAttribute="height" multiplier="1:1" id="5YH-AK-lFL"/>
+                                    <constraint firstAttribute="width" constant="130" id="StS-J0-THZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="monkey-see"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JTY-Eu-2j1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JTY-Eu-2j1" firstAttribute="bottom" secondItem="rFi-j8-4Bg" secondAttribute="bottom" constant="45" id="7xm-16-l6P"/>
-                            <constraint firstItem="aLY-DK-FFB" firstAttribute="leading" secondItem="9Ni-ol-pM8" secondAttribute="leading" id="8jb-mB-rjX"/>
                             <constraint firstItem="JTY-Eu-2j1" firstAttribute="bottom" secondItem="DWC-vI-N5X" secondAttribute="bottom" constant="45" id="9xN-Yc-FYe"/>
                             <constraint firstItem="JTY-Eu-2j1" firstAttribute="trailing" secondItem="9Ni-ol-pM8" secondAttribute="trailing" constant="10" id="AnD-uD-YXe"/>
+                            <constraint firstItem="1Zx-CE-M0g" firstAttribute="centerX" secondItem="6bU-Qa-3Ao" secondAttribute="centerX" id="Fbw-yX-tg4"/>
                             <constraint firstItem="JTY-Eu-2j1" firstAttribute="trailing" secondItem="gvp-BV-URy" secondAttribute="trailing" constant="20" id="HfX-l7-F5M"/>
                             <constraint firstItem="DWC-vI-N5X" firstAttribute="leading" secondItem="0c2-wb-KeN" secondAttribute="trailing" constant="31.999999999999972" id="Jd4-P6-DCz"/>
                             <constraint firstItem="Nko-bb-UaL" firstAttribute="top" secondItem="JTY-Eu-2j1" secondAttribute="top" constant="2" id="LbG-Mk-XyX"/>
                             <constraint firstItem="rFi-j8-4Bg" firstAttribute="leading" secondItem="DWC-vI-N5X" secondAttribute="trailing" constant="32" id="Luy-Up-7jz"/>
                             <constraint firstItem="JTY-Eu-2j1" firstAttribute="bottom" secondItem="0c2-wb-KeN" secondAttribute="bottom" constant="45" id="VGg-Y8-GZZ"/>
                             <constraint firstItem="Nko-bb-UaL" firstAttribute="leading" secondItem="JTY-Eu-2j1" secondAttribute="leading" constant="15" id="a31-kR-pmz"/>
-                            <constraint firstItem="aLY-DK-FFB" firstAttribute="top" secondItem="gvp-BV-URy" secondAttribute="bottom" constant="51" id="brZ-Rq-uAW"/>
+                            <constraint firstItem="1Zx-CE-M0g" firstAttribute="top" secondItem="gvp-BV-URy" secondAttribute="bottom" constant="8" symbolic="YES" id="fQe-tY-po8"/>
                             <constraint firstItem="gvp-BV-URy" firstAttribute="leading" secondItem="JTY-Eu-2j1" secondAttribute="leading" constant="20" id="hLF-GG-l67"/>
                             <constraint firstItem="JTY-Eu-2j1" firstAttribute="trailing" secondItem="Nko-bb-UaL" secondAttribute="trailing" constant="15" id="hu0-R0-sr5"/>
                             <constraint firstItem="gvp-BV-URy" firstAttribute="top" secondItem="Nko-bb-UaL" secondAttribute="bottom" constant="6" id="jt3-wr-hcy"/>
                             <constraint firstItem="9Ni-ol-pM8" firstAttribute="leading" secondItem="JTY-Eu-2j1" secondAttribute="leading" constant="10" id="l0Y-0A-bKA"/>
                             <constraint firstItem="DWC-vI-N5X" firstAttribute="centerX" secondItem="6bU-Qa-3Ao" secondAttribute="centerX" id="qlI-Lr-v7U"/>
                             <constraint firstItem="9Ni-ol-pM8" firstAttribute="top" secondItem="JTY-Eu-2j1" secondAttribute="top" constant="80" id="v3V-la-7C9"/>
-                            <constraint firstItem="aLY-DK-FFB" firstAttribute="trailing" secondItem="9Ni-ol-pM8" secondAttribute="trailing" id="vLy-yO-ZiM"/>
                             <constraint firstItem="DWC-vI-N5X" firstAttribute="top" secondItem="9Ni-ol-pM8" secondAttribute="bottom" constant="42" id="yGp-mE-nCZ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animView" destination="1Zx-CE-M0g" id="SPC-WB-bAz"/>
                         <outlet property="search" destination="gvp-BV-URy" id="Fa4-C9-7A5"/>
                         <outlet property="textField" destination="Nko-bb-UaL" id="GvZ-6l-m23"/>
-                        <outlet property="textLabel" destination="aLY-DK-FFB" id="Na9-86-SNW"/>
                         <outlet property="uiButtonFriend" destination="DWC-vI-N5X" id="Q0a-XN-OQ7"/>
                         <outlet property="uiButtonGroup" destination="rFi-j8-4Bg" id="qHl-Qm-d5x"/>
                         <outlet property="uiButtonPhotos" destination="0c2-wb-KeN" id="yiC-22-g2p"/>
@@ -668,9 +667,6 @@
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="vkLogo" width="512" height="512"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

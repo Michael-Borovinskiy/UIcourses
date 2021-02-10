@@ -7,6 +7,8 @@
 
 import UIKit
 import WebKit
+import Lottie
+
 
 class AuthWKScreen: UIViewController {  // тестовый экран вывода данных VK API
     
@@ -21,11 +23,14 @@ class AuthWKScreen: UIViewController {  // тестовый экран выво�
     @IBOutlet weak var uiButtonPhotos: UIButton!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var search: UIButton!
-    @IBOutlet weak var textLabel: UILabel!
-    
     
     let networkManager: NetworkManager = NetworkManager()
     
+    @IBOutlet weak var animView: AnimationView! {
+        didSet {
+            self.animView.layer.cornerRadius = self.animView.frame.width/2
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +39,9 @@ class AuthWKScreen: UIViewController {  // тестовый экран выво�
         uiButtonGroup.addTarget(self, action: #selector(getGroups), for: .touchUpInside)
         uiButtonPhotos.addTarget(self, action: #selector(getPhotos), for: .touchUpInside)
         search.addTarget(self, action: #selector(getGroupsWithSearch), for: .touchUpInside)
+        animView.loopMode = .loop
+        animView.animationSpeed = 3.5
+        animView.isHidden = true
     }
     
     @objc func getFriends() {
@@ -53,6 +61,8 @@ class AuthWKScreen: UIViewController {  // тестовый экран выво�
     
     @objc func getGroupsWithSearch() {
         if self.textField.text != "" {
+        animView.isHidden = false
+        animView.play()
         guard let word = self.textField.text else {return}
         networkManager.getResGroups(stringURL: "https://api.vk.com/method/groups.search?q=\(String(describing: word))&count=200&v=5.68&access_token=\(Session.instance.token)")
         }

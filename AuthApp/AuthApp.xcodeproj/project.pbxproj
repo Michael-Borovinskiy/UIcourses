@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		159DBD4200CB4DBF21D4A61E /* libPods-AuthApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E1CDA85A1EC846A32E3A25 /* libPods-AuthApp.a */; };
 		874EF5AB25C758B000DD6859 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874EF5AA25C758B000DD6859 /* NetworkManager.swift */; };
 		87918B61259666400087506D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87918B60259666400087506D /* NewsViewController.swift */; };
 		87918B66259666D00087506D /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87918B64259666D00087506D /* NewsCell.swift */; };
@@ -40,6 +41,7 @@
 		87AE8B2F2583E9EC007DF0CD /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE8B2E2583E9EC007DF0CD /* ImagesViewController.swift */; };
 		87AE8B322583EA4A007DF0CD /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE8B312583EA4A007DF0CD /* ImageCell.swift */; };
 		87AE8B3525841145007DF0CD /* GroupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AE8B3425841145007DF0CD /* GroupData.swift */; };
+		87B4D2BB25D461E5005BEAE5 /* monkey-see.json in Resources */ = {isa = PBXBuildFile; fileRef = 87B4D2BA25D461E5005BEAE5 /* monkey-see.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,10 @@
 		87AE8B2E2583E9EC007DF0CD /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
 		87AE8B312583EA4A007DF0CD /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		87AE8B3425841145007DF0CD /* GroupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupData.swift; sourceTree = "<group>"; };
+		87B4D2BA25D461E5005BEAE5 /* monkey-see.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "monkey-see.json"; sourceTree = "<group>"; };
+		974DE4B9751ED7AED64AA20F /* Pods-AuthApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthApp.debug.xcconfig"; path = "Target Support Files/Pods-AuthApp/Pods-AuthApp.debug.xcconfig"; sourceTree = "<group>"; };
+		E2E1CDA85A1EC846A32E3A25 /* libPods-AuthApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AuthApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7FBD6D18007742704805BA6 /* Pods-AuthApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthApp.release.xcconfig"; path = "Target Support Files/Pods-AuthApp/Pods-AuthApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +91,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				159DBD4200CB4DBF21D4A61E /* libPods-AuthApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		504768BA3BBFAB4B8F222BEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				974DE4B9751ED7AED64AA20F /* Pods-AuthApp.debug.xcconfig */,
+				E7FBD6D18007742704805BA6 /* Pods-AuthApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		87918B5F259666190087506D /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +114,14 @@
 				879D089325BC9430004562CA /* CommentsViewController.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		879F0CB625D327CD00FD6AFD /* LottieFiles */ = {
+			isa = PBXGroup;
+			children = (
+				87B4D2BA25D461E5005BEAE5 /* monkey-see.json */,
+			);
+			path = LottieFiles;
 			sourceTree = "<group>";
 		};
 		879F8D9D25C4B1F30044B7FD /* Entities */ = {
@@ -131,6 +155,8 @@
 			children = (
 				87A22C1F25796A03007AC557 /* AuthApp */,
 				87A22C1E25796A03007AC557 /* Products */,
+				504768BA3BBFAB4B8F222BEE /* Pods */,
+				F451C1A1BAC420E0DE4623DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +171,7 @@
 		87A22C1F25796A03007AC557 /* AuthApp */ = {
 			isa = PBXGroup;
 			children = (
+				879F0CB625D327CD00FD6AFD /* LottieFiles */,
 				879F8D9D25C4B1F30044B7FD /* Entities */,
 				87918B5F259666190087506D /* News */,
 				87A454EA258FE53C0014CD95 /* Groups */,
@@ -196,6 +223,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F451C1A1BAC420E0DE4623DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2E1CDA85A1EC846A32E3A25 /* libPods-AuthApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,6 +238,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87A22C3125796A05007AC557 /* Build configuration list for PBXNativeTarget "AuthApp" */;
 			buildPhases = (
+				623F7E75E8472F3A818D27D3 /* [CP] Check Pods Manifest.lock */,
 				87A22C1925796A03007AC557 /* Sources */,
 				87A22C1A25796A03007AC557 /* Frameworks */,
 				87A22C1B25796A03007AC557 /* Resources */,
@@ -257,6 +293,7 @@
 				879B988225929915009EFDB7 /* CustomHeaderForFriendScreen.xib in Resources */,
 				87918B67259666D00087506D /* NewsCell.xib in Resources */,
 				879D089925BC976A004562CA /* CommentCell.xib in Resources */,
+				87B4D2BB25D461E5005BEAE5 /* monkey-see.json in Resources */,
 				87A22C2A25796A05007AC557 /* Assets.xcassets in Resources */,
 				87A22C2825796A03007AC557 /* Main.storyboard in Resources */,
 				87AA6B38258BD5C300F7C515 /* ImageCell.xib in Resources */,
@@ -265,6 +302,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		623F7E75E8472F3A818D27D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AuthApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		87A22C1925796A03007AC557 /* Sources */ = {
@@ -439,6 +501,7 @@
 		};
 		87A22C3225796A05007AC557 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 974DE4B9751ED7AED64AA20F /* Pods-AuthApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -458,6 +521,7 @@
 		};
 		87A22C3325796A05007AC557 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7FBD6D18007742704805BA6 /* Pods-AuthApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
